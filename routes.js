@@ -9,14 +9,17 @@ function startMiddleware(req, res, next) {
     next();
 }
 
-// Rota home
+// Rotas home
 route.get("/", startMiddleware, homeController.paginaInicial);
 
-// Rota cart
+// Rotas cart
 route.get("/cart", cartController.paginaInicial);
 
-// Rota pesquisa
-route.get("/products-search/:idProduct?", productsSearch.paginaInicial);
+// Rotas pesquisa
+route.get("/search/:idProduct?", productsSearch.paginaInicial);
+
+// Rotas produto
+route.get("/product/:idProduct?", productsSearch.paginaInicial);
 
 
 module.exports = route;
