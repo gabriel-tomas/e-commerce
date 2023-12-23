@@ -16,10 +16,10 @@ route.get("/", startMiddleware, homeController.paginaInicial);
 route.get("/cart", cartController.paginaInicial);
 
 // Rotas pesquisa
-route.get("/search/:idProduct?", productsSearch.paginaInicial);
+route.get("/search", productsSearch.paginaInicial);
 
 // Rotas produto
-route.get("/product/:idProduct?", productsSearch.paginaInicial);
+route.get("/product", productsSearch.paginaInicial);
 
 
 module.exports = route;
