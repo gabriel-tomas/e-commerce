@@ -6,7 +6,8 @@ module.exports = {
         global: './frontend/global.js',
         home: './frontend/home.js',
         cart: './frontend/cart.js',
-        productsSearch: './frontend/productsSearch.js'
+        productsSearch: './frontend/productsSearch.js',
+        product: './frontend/product.js',
     },
     output: {
         path: path.resolve(__dirname, 'public', 'assets', 'js'),
