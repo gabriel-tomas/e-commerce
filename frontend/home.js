@@ -5,4 +5,4 @@ import './assets/js/sectionCategories.js';
 import './assets/js/forYou/forYouChoicer.js';
 import './assets/js/forYou/forYou.js';
 // > section creater start
-import './assets/js/sectionsCreater.js'
+import './assets/js/sectionsCreater.js';

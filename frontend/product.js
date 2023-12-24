@@ -1,3 +1,3 @@
-// products search
-// > get items
-import './assets/js/product';
+// product
+// > get item
+import './assets/js/product/getProductId';

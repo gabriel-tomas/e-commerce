@@ -3,7 +3,8 @@ import ProductCard from '../productCard';
 
 (() => {
     const searchItem = new URLSearchParams(window.location.search).get("q");
-
+    if(!searchItem) return;
+    if(typeof searchItem !== "string") return;
     
     productsMethods.setSearchProducts(searchItem, res => {
         res.products.forEach(product => {
