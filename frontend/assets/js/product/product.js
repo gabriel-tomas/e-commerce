@@ -30,16 +30,16 @@ export default class Product {
 
         const galleryImgsItems = () => {
             this.product.images.forEach((value, id) => {
-                const linkEl = document.createElement("a");
-                linkEl.classList.add("gallery-item");
+                const buttonEl = document.createElement("button");
+                buttonEl.classList.add("gallery-item");
                 
                 const img = document.createElement("img");
                 img.setAttribute("src", value);
                 img.setAttribute("alt", `Gallery image ${id}`);
 
-                linkEl.appendChild(img);
+                buttonEl.appendChild(img);
 
-                galleryImgsEl.appendChild(linkEl);
+                galleryImgsEl.appendChild(buttonEl);
             });
         }
 
@@ -50,7 +50,7 @@ export default class Product {
         const title = document.querySelector(".product-info-buy > .container-title > h1");
         const description = document.querySelector(".product-info-buy > .container-description > p");
         const rating = document.querySelector(".product-info-buy > .container-rating > span");
-        const price = document.querySelector(".product-info-buy > .container-price > .price");
+        const price = document.querySelector(".product-info-buy > .container-price > .price > .value");
         const discount = document.querySelector(".product-info-buy > .container-price > .discount > .value");
         const stock = document.querySelector(".product-info-buy > .container-stock .value");
 

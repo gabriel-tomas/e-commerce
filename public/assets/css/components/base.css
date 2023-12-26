@@ -27,3 +27,8 @@ a {
 input:focus {
     outline: none;
 }
+
+p {
+    line-height: 150%;
+    font-family: var(--normal-font);
+}

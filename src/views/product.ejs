@@ -1,50 +1,52 @@
 <%- include("./includes/head") %>
-<%- include("./includes/end-head/end-head-index") %>
+<%- include("./includes/end-head/end-head-product") %>
 <%- include("./includes/start-body") %>
-    <section class="product-item space-sides max-width-section-align">
-        <div class="category-brand">
+    <section class="product-item space-sides max-width-section-align space-top">
+        <div class="top-content category-brand">
             <a class="category" href="#">
-                <span class="path-item"></span>
+                <span class="path-item font-wght-700"></span>
             </a> >
             <a class="brand" href="#">
-                <span class="path-item"></span>
+                <span class="path-item font-wght-700"></span>
             </a>
         </div>
-        <div class="product-imgs">
-            <div class="main-img">
-                <img src="" alt="">
-            </div>
-            <div class="gallery-imgs">
-                
-            </div>
-        </div>
-        <div class="product-info-buy">
-            <div class="container-title">
-                <h1></h1>
-            </div>
-            <div class="container-description">
-                <p></p>
-            </div>
-            <div class="container-rating">
-                <span></span>
-            </div>
-            <div class="container-price">
-                <span class="price">PRICE $ 45305</span>
-                <span class="discount"><span class="value"></span>% OFF</span>
-            </div>
-            <div class="container-stock">
-                <span>Stock: <span class="value"></span> available</span>
-            </div>
-            <div class="container-buy">
-                <div class="container-btn-buy">
-                    <a href="#">
-                        <button>Buy</button>
-                    </a>
+        <div class="bottom-content gap-top-1-2">
+            <div class="left-content product-imgs">
+                <div class="main-img">
+                    <img src="" alt="">
                 </div>
-                <div class="container-btn-cart">
-                    <a href="#">
-                        <button>Add to cart</button>
-                    </a>
+                <div class="gallery-imgs gap-top-0-86">
+                    
+                </div>
+            </div>
+            <div class="right-content product-info-buy">
+                <div class="container-title">
+                    <h1 class="font-size-md"></h1>
+                </div>
+                <div class="container-description">
+                    <p class="font-size-base font-wght-400"></p>
+                </div>
+                <div class="container-rating gap-top-0-65">
+                    <span class="font-size-base"></span>
+                </div>
+                <div class="container-price gap-top-0-86">
+                    <span class="price font-size-lg">$ <span class="value"></span></span>
+                    <span class="discount normal-font"><span class="value"></span>% OFF</span>
+                </div>
+                <div class="container-stock gap-top-0-65">
+                    <span class="font-size-base">Stock: <span class="value"></span> available</span>
+                </div>
+                <div class="container-buy">
+                    <div class="container-btn-buy">
+                        <a class="button primary" href="/cart">
+                            <button class="font-wght-700">Buy</button>
+                        </a>
+                    </div>
+                    <div class="container-btn-cart">
+                        <a class="button secondary gap-top-0-65" href="#">
+                            <button class="font-wght-700">Add to cart</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
