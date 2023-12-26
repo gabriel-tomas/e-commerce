@@ -50,7 +50,7 @@ export default class ProductCard {
         btn.addEventListener("click", () => {
             const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
             addCartItemLclStrg();
-        })
+        });
 
         return btn;
     }

@@ -1,4 +1,4 @@
-/* import {localStorageSave, localStorageGet} from "./localStorageSaverAndGet"; */
+import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
 
 export default class Product {
     constructor(product) {
@@ -53,6 +53,8 @@ export default class Product {
         const price = document.querySelector(".product-info-buy > .container-price > .price > .value");
         const discount = document.querySelector(".product-info-buy > .container-price > .discount > .value");
         const stock = document.querySelector(".product-info-buy > .container-stock .value");
+        const btnBuy = document.querySelector(".product-info-buy > .container-buy .btn-buy");
+        const btnAddCart = document.querySelector(".product-info-buy > .container-buy .btn-add-cart");
 
         title.innerText = this.product.title;
         description.innerText = this.product.description;
@@ -60,5 +62,29 @@ export default class Product {
         price.innerText = this.product.price;
         discount.innerText = this.product.discountPercentage;
         stock.innerText = this.product.stock;
+
+        btnBuy.addEventListener("click", () => {
+            const addCartItemLclStrg = Product.addCartItemLclStrg.bind(this);
+            addCartItemLclStrg();
+        });
+        btnAddCart.addEventListener("click", () => {
+            const addCartItemLclStrg = Product.addCartItemLclStrg.bind(this);
+            addCartItemLclStrg();
+        });
+    }
+
+    static addCartItemLclStrg() {
+        let oldValue;
+        oldValue = localStorageGet("cart-items");
+        const itemId = new URLSearchParams(window.location.search).get("id");
+        if(!itemId) return;
+        if(typeof itemId !== "string") return;
+
+         if(oldValue === null) {
+            localStorageSave("cart-items", itemId);
+            return;
+        };
+
+        localStorageSave("cart-items", `${oldValue}, ${itemId}`);
     }
 }
