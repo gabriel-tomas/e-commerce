@@ -27,7 +27,7 @@
 .bottom-content .gallery-imgs {
     width: 100%;
     display: flex;
-    gap: 22px;
+    gap: clamp(0.313rem, -0.042rem + 1.771vw, 1.375rem);
 }
 
 .bottom-content .gallery-imgs > .gallery-item {
@@ -103,5 +103,12 @@
 
     .bottom-content > .right-content .container-buy {
         margin-top: 2.5rem;
+    }
+
+    .bottom-content .gallery-imgs > .gallery-item {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        border: 1px solid var(--neutral-6);
     }
 }
