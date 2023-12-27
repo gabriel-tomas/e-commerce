@@ -20,7 +20,7 @@
 .bottom-content .main-img > img {
     width: 100%;
     object-fit: cover;
-    height: clamp(300px, 70vh, 720px);
+    height: clamp(300px, 70vh, 620px);
     border-radius: 15px;
 }
 
@@ -35,7 +35,6 @@
     height: 70px;
     border-radius: 5px;
     border: 1px solid var(--neutral-6);
-    transition: opacity 50ms;
 }
 
 .bottom-content .gallery-imgs > .gallery-item > img {
@@ -90,8 +89,19 @@
     background-color: var(--secondary);
 }
 
-@keyframes hoverPerma {
-    100% {
+@media screen and (max-width: 790px) {
+    .bottom-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 30px;
+    }
 
+    .bottom-content .main-img > img {
+        height: clamp(300px, 55vh, 520px);
+    }
+
+    .bottom-content > .right-content .container-buy {
+        margin-top: 2.5rem;
     }
 }

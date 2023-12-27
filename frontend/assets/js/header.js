@@ -4,23 +4,31 @@
     const arrowRight = document.querySelector("header .right-arrow");
     
     searchBtn.addEventListener("click", () => {
-        if(getComputedStyle(searchBox).visibility === "hidden") {
-            searchBoxVisibility(true);
-            changeOpacity(true, searchBox);
-            changeOpacity(true, arrowRight);
-            setTimeout(() => {changeOpacity(false, arrowRight)}, 150);
-            searchBoxChangeWidth(true);
-            arrowToRight();
-        } else {
-            searchBoxVisibility(false);
-            changeOpacity(false, searchBox);
-            changeOpacity(false, arrowRight);
-            searchBoxChangeWidth(false);
-            arrowToOriginal();
+        if(!window.matchMedia("(max-width: 744px)").matches ) {
+            if(getComputedStyle(searchBox).visibility === "hidden") {
+                searchBoxVisibility(true);
+                changeOpacity(true, searchBox);
+                changeOpacity(true, arrowRight);
+                setTimeout(() => {changeOpacity(false, arrowRight)}, 150);
+                searchBoxChangeWidth(true);
+                arrowToRight();
+            } else {
+                searchBoxVisibility(false);
+                changeOpacity(false, searchBox);
+                changeOpacity(false, arrowRight);
+                searchBoxChangeWidth(false);
+                arrowToOriginal();
+            }
         }
     });
 
     function searchBoxChangeWidth(change) {
+       /*  if () {
+            console.log(searchBox);
+            window.getComputedStyle(searchBox).width;
+            searchBox.style.width = "100%";
+            return;
+        } */
         change? searchBox.style.width = "70%" : searchBox.style.width = "0%";
     }
 
