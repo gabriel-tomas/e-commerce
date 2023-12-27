@@ -32,6 +32,14 @@ export default class Product {
             this.product.images.forEach((value, id) => {
                 const buttonEl = document.createElement("button");
                 buttonEl.classList.add("gallery-item");
+
+                buttonEl.addEventListener("mouseover", () => {
+                    mainImgEl.setAttribute("src", value);
+                    document.querySelectorAll(".gallery-item").forEach(item => {
+                        item.style.opacity = "1";
+                    });
+                    buttonEl.style.opacity = ".5";
+                });
                 
                 const img = document.createElement("img");
                 img.setAttribute("src", value);

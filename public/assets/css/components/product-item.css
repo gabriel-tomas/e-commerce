@@ -1,5 +1,5 @@
 .product-item {
-    
+    margin-bottom: 3rem;
 }
 
 .top-content > a {
@@ -20,7 +20,7 @@
 .bottom-content .main-img > img {
     width: 100%;
     object-fit: cover;
-    height: clamp(300px, 65vh, 720px);
+    height: clamp(300px, 70vh, 720px);
     border-radius: 15px;
 }
 
@@ -35,6 +35,7 @@
     height: 70px;
     border-radius: 5px;
     border: 1px solid var(--neutral-6);
+    transition: opacity 50ms;
 }
 
 .bottom-content .gallery-imgs > .gallery-item > img {
@@ -87,4 +88,10 @@
 
 .container-buy a.secondary {
     background-color: var(--secondary);
+}
+
+@keyframes hoverPerma {
+    100% {
+
+    }
 }
