@@ -5,6 +5,10 @@ import Product from "./product";
     const productId = new URLSearchParams(window.location.search).get("id");
     if(!productId) return;
     if(typeof productId !== "string") return;
+
+    /* productsMethods.getComments("30", res => {
+        console.log(res);
+    }); */
     
     productsMethods.getSingleProduct(productId, res => {
         const product = new Product(res);

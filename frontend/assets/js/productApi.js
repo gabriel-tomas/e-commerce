@@ -49,6 +49,16 @@ class ProductsRoutes {
                 searchCategory = `${this.mainRoute}/products/category/${value}`;
             }
         })
+        let comments = null;
+        Object.defineProperty(this, "setCommentsRoute", {
+            get: function() {
+                return comments;
+            },
+            set: function(limit) {
+                if(typeof limit !== "string") return;
+                comments = `${this.mainRoute}/comments?limit=${limit}`;
+            }
+        })
     }
 
     static fetchRoute(route, callback) {
@@ -80,6 +90,11 @@ class ProductsRoutes {
     getSingleProduct(id, callback) {
         this.setSingleRoute = id;
         ProductsRoutes.fetchRoute(this.setSingleRoute, callback);
+    }
+
+    getComments(limit, callback) {
+        this.setCommentsRoute = limit;
+        ProductsRoutes.fetchRoute(this.setCommentsRoute, callback);
     }
 }
 
