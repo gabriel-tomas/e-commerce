@@ -1,0 +1,22 @@
+.products-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .products-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .products-layout {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .products-layout > .container-product .container-thumbnail {
+        height: clamp(100px, 50vw, 400px);
+    }
+}
