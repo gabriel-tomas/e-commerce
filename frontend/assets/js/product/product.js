@@ -66,10 +66,44 @@ export default class Product {
 
         title.innerText = this.product.title;
         description.innerText = this.product.description;
-        rating.innerText = this.product.rating;
+        ratingStars(this.product.rating).forEach(star => {
+            rating.appendChild(star);
+        });
+        rating.innerHTML += this.product.rating;
         price.innerText = this.product.price;
         discount.innerText = this.product.discountPercentage;
         stock.innerText = this.product.stock;
+
+        function ratingStars(rating) {
+            let stars = [];
+            const ratingInt = Number(String(rating).slice(0, String(rating).indexOf(".")));
+            const ratingDec = Number(String(rating).slice(String(rating).indexOf(".")));
+
+            for(let i = 0; i < ratingInt; i++) {
+                stars.push(spanStar());
+            }
+
+            console.log(ratingDec);
+
+            if(ratingDec < .5) {
+                stars.push(spanStar(true));
+            } else {
+                stars.push(spanStar());
+            }
+
+            function spanStar(half) {
+                const span = document.createElement("span");
+                span.classList.add("rating-star", "material-symbols-outlined", "fill-icon");
+                if(half) {
+                    span.innerText = "star_half";
+                    return span;
+                }
+                span.innerText = "star";
+                return span;
+            }
+
+            return stars;
+        }
 
         btnBuy.addEventListener("click", () => {
             const addCartItemLclStrg = Product.addCartItemLclStrg.bind(this);
