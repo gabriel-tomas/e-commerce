@@ -1,3 +1,3 @@
 // products search
-// > get items
-import './assets/js/products-search/getItemSearch';
+// > get search items
+import './assets/js/sectionsTopic/ItemsSearch';

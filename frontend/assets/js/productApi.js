@@ -19,6 +19,7 @@ class ProductsRoutes {
             },
             set: function(value) {
                 if(typeof value !== "string") return;
+                if(!value) return;
                 searchLink = `${this.mainRoute}/products/search?q=${value}`;
             }
         })
@@ -30,6 +31,8 @@ class ProductsRoutes {
                 return singleId;
             },
             set: function(id) { // https://dummyjson.com/products/2
+                if(typeof id !== "string") return;
+                if(!id) return;
                 singleId = `${this.mainRoute}/products/${id}`;
             }
         })
@@ -46,6 +49,7 @@ class ProductsRoutes {
             },
             set: function(value) {
                 if(typeof value !== "string") return;
+                if(!value) return;
                 searchCategory = `${this.mainRoute}/products/category/${value}`;
             }
         })
@@ -56,17 +60,22 @@ class ProductsRoutes {
             },
             set: function(limit) {
                 if(typeof limit !== "string") return;
+                if(!limit) return;
                 comments = `${this.mainRoute}/comments?limit=${limit}`;
             }
         })
     }
 
     static fetchRoute(route, callback) {
-        fetch(route).then(res => {
-            res.json().then(data => {
-                if(callback) callback(data);
+        try {
+            fetch(route).then(res => {
+                res.json().then(data => {
+                    if(callback) callback(data);
+                });
             });
-        });
+        } catch(err) {
+            throw new Error(err);
+        }
     }
 
     getAllProducts(skip=0, limit=30, callback) {
