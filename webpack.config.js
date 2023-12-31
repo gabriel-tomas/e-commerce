@@ -6,7 +6,7 @@ module.exports = {
         global: './frontend/global.js',
         home: './frontend/home.js',
         cart: './frontend/cart.js',
-        productsSearch: './frontend/productsSearch.js',
+        products: './frontend/products.js',
         product: './frontend/product.js',
     },
     output: {

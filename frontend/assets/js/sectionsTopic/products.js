@@ -15,6 +15,11 @@ import SectionTopic from '../createrSectionTopic';
             if(this.errors.length > 0) return;
 
             const products = await this.getItems();
+            if(products.products.length === 0) {
+                document.querySelector("section.not-found").style.display = "block";
+                document.querySelector("section.products-layout").style.display = "none";
+                return;
+            }
             this.addToParent(".search-items", products.products);
         }
 

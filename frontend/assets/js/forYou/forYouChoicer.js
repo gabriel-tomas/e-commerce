@@ -78,7 +78,7 @@ import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
                     if(value.checked) {
                         selectedItems.push(value.parentElement.querySelector(".category-name").innerText);
                     }
-                })
+                });
 
                 localStorageSave("interestedItems", selectedItems);
                 destroyContainerChoicer();

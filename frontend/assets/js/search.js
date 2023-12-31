@@ -5,5 +5,5 @@
         if(e.key === "Enter" && searchInput.value !== "") {
             window.location.href = `/search?q=${searchInput.value.toLowerCase()}`;
         }
-    })
+    });
 })();
