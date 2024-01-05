@@ -1,7 +1,48 @@
 <%- include("./includes/head") %>
 <%- include("./includes/end-head/end-head-products") %>
 <%- include("./includes/start-body") %>
-    <section class="products-layout search-items space-sides max-width-section-align space-top-3">
+    <div class="space-sides max-width-section-align space-top-3">
+        <select class="button">
+            <option selected disabled>Order by</option>
+            <option value="lower">Lowest price</option>
+            <option value="bigger">Biggest price</option>
+        </select>
+        <button class="button">Filter</button>
+        <div>
+            <div class="container-price">
+                <div>
+                    <label for="min-price">
+                        <h1 class="font-size-base">Min price</h1>
+                    </label>
+                    <input type="number" id="min-price" placeholder="Min price">
+                </div>
+                <div>
+                    <label for="max-price">
+                        <h1 class="font-size-base">Max price</h1>
+                    </label>
+                    <input class="font-size-base" type="number" id="max-price" placeholder="Max price">
+                </div>
+            </div>
+            <div class="container-category">
+                <h1 class="font-size-base">Category:</h1>
+                <div>
+                    <div>
+                        <input type="radio" id="">
+                        <label for="">value 1</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="">
+                        <label for="">value 2</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="">
+                        <label for="">value 3</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="products-layout search-items space-sides max-width-section-align space-top">
         
     </section>
     <section class="not-found space-sides max-width-section-align">

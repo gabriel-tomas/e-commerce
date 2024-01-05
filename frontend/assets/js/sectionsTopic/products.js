@@ -9,6 +9,7 @@ import Filter from '../filter';
             this.errors = [];
             this.queryItem = null;
             this.query = null;
+            this.filter = null;
         }
 
         async create() {
@@ -23,8 +24,9 @@ import Filter from '../filter';
             }
             const allProducts = products.products;
 
-            new Filter(allProducts);
+            this.filter = new Filter(allProducts);
             this.addToParent(".search-items", allProducts);
+            console.log(this.filter);
         }
 
         getQueryItem() {
