@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const routes = require("./routes");
@@ -15,7 +16,9 @@ app.set("view engine", "ejs");
 app.use(MdwareGlobal);
 app.use(routes);
 
-app.listen(3000, () => {
-    console.log("Acesse http://localhost:3000");
-    console.log("Executando na porta 3000");
+const port = process.env.DEFAULT_PORT;
+
+app.listen(port, () => {
+    console.log(`Acesse http://localhost:${port}`);
+    console.log(`Executando na porta ${port}`);
 });
