@@ -3,6 +3,8 @@
     --background: #ede9f7;
     --primary: #97bd4c;
     --secondary: #c4b5e3;
+    --secondary-darker: #a598c0;
+    --secondary-0-5: hsla(260, 45%, 80%, 0.276);
     --accent: #769537;
 
     --wth-color: #fff;

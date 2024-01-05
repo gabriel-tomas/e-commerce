@@ -28,6 +28,10 @@ input:focus {
     outline: none;
 }
 
+select {
+    outline: none;
+}
+
 p {
     line-height: 150%;
     font-family: var(--normal-font);

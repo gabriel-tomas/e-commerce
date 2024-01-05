@@ -1,0 +1,39 @@
+.filter-options {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.filter-options > .button.order {
+    border-radius: 5px;
+    border-color: var(--neutral-2);
+    color: var(--text);
+    padding: 5px;
+}
+
+.filter-options > .button.filter {
+    border-radius: 5px;
+    width: clamp(80px, 15%, 100px);
+    background-color: var(--neutral-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.filter-options > .button.order:hover {
+    outline: 1px solid var(--neutral-2);
+}
+
+.filter-options > .button.order:focus {
+    border-color: var(--secondary-darker);
+    outline: 1px solid var(--secondary-darker);
+}
+
+.filter-additional-box {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}

@@ -1,14 +1,17 @@
 <%- include("./includes/head") %>
 <%- include("./includes/end-head/end-head-products") %>
 <%- include("./includes/start-body") %>
-    <div class="space-sides max-width-section-align space-top-3">
-        <select class="button">
+    <div class="filter-options space-sides max-width-section-align space-top-3">
+        <select class="button order normal-font font-size-base">
             <option selected disabled>Order by</option>
             <option value="lower">Lowest price</option>
             <option value="bigger">Biggest price</option>
         </select>
-        <button class="button">Filter</button>
-        <div>
+        <button class="button filter font-size-base">
+            <span>Filter</span>
+            <span class="material-symbols-outlined font-size-md">tune</span>
+        </button>
+        <div class="filter-additional-box">
             <div class="container-price">
                 <div>
                     <label for="min-price">
