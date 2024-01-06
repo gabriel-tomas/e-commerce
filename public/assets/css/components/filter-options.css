@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    transition: background-color .07s;
 }
 
 .filter-options > .button.order:hover {
@@ -34,6 +35,40 @@
     visibility: hidden;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 42px;
     z-index: 10;
+    background-color: var(--secondary);
+    margin-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
+    padding: 24px;
+    box-shadow: 10px 10px 15px var(--neutral-7);
+    border-radius: 15px;
+    width: clamp(260px, 30%, 350px);
+}
+
+.filter-additional-box .container-price {
+    display: flex;
+    column-gap: 25px;
+    row-gap: 10px;
+}
+
+.filter-additional-box .container-price > div {
+    flex-basis: 100%;
+}
+
+.filter-additional-box .container-price .input-price {
+    height: 35px;
+    border: 1px solid var(--neutral-5);
+    border-radius: 10px;
+    width: max(100%, 100px);
+    padding: 10px;
+}
+
+.filter-additional-box .container-price .input-price::-webkit-outer-spin-button,
+.filter-additional-box .container-price .input-price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-additional-box .container-price .input-price[type=number] {
+  -moz-appearance: textfield;
 }

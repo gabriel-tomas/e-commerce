@@ -1,3 +1,5 @@
 // products search
-// > get search items
+// > get items
 import './assets/js/sectionsTopic/products';
+// > filter aditional box
+import './assets/js/filter/filterAditional';

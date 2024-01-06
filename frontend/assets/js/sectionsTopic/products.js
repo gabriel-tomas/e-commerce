@@ -1,6 +1,7 @@
 import productsMethods from '../productApi';
 import SectionTopic from '../createrSectionTopic';
-import Filter from '../filter';
+import Filter from '../filter/filter';
+import FilterAditional from '../filter/filterAditional';
 
 (() => {
     class Products extends SectionTopic {
@@ -24,9 +25,12 @@ import Filter from '../filter';
             }
             const allProducts = products.products;
 
-            this.filter = new Filter(allProducts);
             this.addToParent(".search-items", allProducts);
-            console.log(this.filter);
+
+            // filter
+            this.filter = new Filter(allProducts);
+            this.filter.init();
+            FilterAditional.addCategories(this.filter.products);
         }
 
         getQueryItem() {
