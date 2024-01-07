@@ -25,6 +25,7 @@ export default class FilterAditional {
             categoriesAdded.push(category);
 
             const div = document.createElement("div");
+            div.classList.add("gap-top-0-65");
             const inputCheckbox = document.createElement("input");
             inputCheckbox.setAttribute("type", "checkbox");
             inputCheckbox.setAttribute("value", category);
@@ -32,6 +33,7 @@ export default class FilterAditional {
             const idValue = `input-${category}`;
             inputCheckbox.setAttribute("id", idValue);
             const label = document.createElement("label");
+            label.classList.add("font-size-base");
             label.setAttribute("for", idValue);
             label.innerText = value.category;
 

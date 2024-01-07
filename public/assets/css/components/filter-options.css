@@ -63,6 +63,31 @@
     padding: 10px;
 }
 
+.filter-additional-box .container-apply  {
+    text-align: center;
+}
+
+.filter-additional-box .container-apply .button {
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--primary);
+}
+
+.filter-additional-box .container-category .checkbox-category {
+    margin-right: .14rem;
+}
+
+.filter-additional-box .container-category .checkbox-category:checked {
+    accent-color: var(--accent);
+}
+
+.filter-additional-box .container-category .container-options-category > div {
+    background-color: var(--secondary-darker);
+    padding: 3px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
 .filter-additional-box .container-price .input-price::-webkit-outer-spin-button,
 .filter-additional-box .container-price .input-price::-webkit-inner-spin-button {
   -webkit-appearance: none;
