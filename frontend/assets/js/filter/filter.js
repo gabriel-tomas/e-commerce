@@ -50,6 +50,8 @@ export default class Filter extends SectionTopic {
         const applyBtn = document.querySelector(".apply-filters");
         const minPriceInput = document.querySelector("#min-price");
         const maxPriceInput = document.querySelector("#max-price");
+        const boxFilter = document.querySelector(".filter-additional-box");
+        const btnFilter = document.querySelector(".button.filter");
 
         applyBtn.addEventListener("click", () => {
             const [minPrice, maxPrice] = orderPrice();
@@ -69,22 +71,27 @@ export default class Filter extends SectionTopic {
                 this.outputProducts = categoriesItems;
             }
 
+            if(this.outputProducts === null) return;
+
             this.removeItemsOfParent(this.parentProducts);
             setTimeout(() => this.addToParent(this.parentProducts, this.outputProducts), 100);
-            this.setSearchInfos();
+            /* this.setSearchInfos(); */
+            boxFilter.style.visibility = "hidden";
+            btnFilter.removeAttribute("style");
         });
 
         function orderPrice() {
             let minPrice = Number(minPriceInput.value);
             let maxPrice = Number(maxPriceInput.value);
-            if(!(minPrice && maxPrice)) {
+            if(typeof minPrice !== "number" && typeof maxPrice !== "number") return;
+            if(!minPrice && !maxPrice) {
                 minPrice = 0;
                 maxPrice = 0;
                 return [minPrice, maxPrice];
             }
             else if(!minPrice) minPrice = 0;
             else if(!maxPrice) maxPrice = 0;
-            if(minPrice > maxPrice) {
+            if(minPrice !== 0 && maxPrice !== 0 && minPrice > maxPrice) {
                 const [minPriceTemp, maxPriceTemp] = [minPrice, maxPrice];
                 minPrice = maxPriceTemp;
                 maxPrice = minPriceTemp;
@@ -108,11 +115,27 @@ export default class Filter extends SectionTopic {
 
     getProductsPriceRange(min, max) {
         const products = [];
-        this.products.forEach(product => {
-            if(product.price >= min && product.price <= max) {
-                products.push(product);
-            }
-        });
+
+        if(!min && !max) return;
+        if(min && max) {
+            this.products.forEach(product => {
+                if(product.price >= min && product.price <= max) {
+                    products.push(product);
+                }
+            });
+        } else if(min) {
+            this.products.forEach(product => {
+                if(product.price >= min) {
+                    products.push(product);
+                }
+            });
+        } else if(max) {
+            this.products.forEach(product => {
+                if(product.price <= max) {
+                    products.push(product);
+                }
+            });
+        }
 
         return products.length === 0? false : products;
     }

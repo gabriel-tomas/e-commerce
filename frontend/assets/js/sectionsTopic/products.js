@@ -21,11 +21,8 @@ import FilterAditional from '../filter/filterAditional';
             };
 
             const products = await this.getItems();
-            if(products.products.length === 0) {
-                document.querySelector("section.not-found").style.display = "block";
-                document.querySelector("section.products-layout").style.display = "none";
-                return;
-            }
+            
+            if(!this.productNotFound(products)) return;
 
             this.produts = products.products;
 
@@ -36,6 +33,17 @@ import FilterAditional from '../filter/filterAditional';
             this.filter.init();
             FilterAditional.addCategories(this.filter.products);
             this.setSearchInfos();
+        }
+
+        productNotFound(products) {
+            if(products.products.length === 0) {
+                document.querySelector("section.not-found").style.display = "block";
+                document.querySelector("section.products-layout").style.display = "none";
+                document.querySelector("div.results-search").style.display = "none";
+                document.querySelector("div.filter-options").style.display = "none";
+                return false;
+            }
+            return true;
         }
 
         setSearchInfos() {
