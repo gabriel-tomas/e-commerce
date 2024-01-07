@@ -27,6 +27,8 @@ export default class FilterAditional {
             const div = document.createElement("div");
             const inputCheckbox = document.createElement("input");
             inputCheckbox.setAttribute("type", "checkbox");
+            inputCheckbox.setAttribute("value", category);
+            inputCheckbox.classList.add("checkbox-category");
             const idValue = `input-${category}`;
             inputCheckbox.setAttribute("id", idValue);
             const label = document.createElement("label");
