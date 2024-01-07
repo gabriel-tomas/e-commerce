@@ -1,4 +1,4 @@
-import {localStorageSave, localStorageGet} from "./localStorageSaverAndGet";
+import {localStorageSave, localStorageGet, localStorageRemove} from "./localStorageSaverAndGet";
 
 export default class ProductCard {
     constructor(product) {
@@ -67,7 +67,7 @@ export default class ProductCard {
         localStorageSave("cart-items", `${oldValue}, ${this.id}`);
     }
 
-    static deleteCartItemLclStrg() {
+    static deleteCartItemLclStrg(deleteAll=false) {
         let oldValue;
         oldValue = localStorageGet("cart-items");
         if(oldValue === null) {
@@ -77,10 +77,24 @@ export default class ProductCard {
         oldValue = oldValue.split(',');
         oldValue = oldValue.map(value => value.trim());
 
-        oldValue.splice(oldValue.indexOf(String(this.id)), 1);
+        if(deleteAll) {
+            oldValue = oldValue.filter((id, i) => {
+                if(Number(id) !== this.id) {
+                    console.log(id);
+                    return true;
+                }
+            });
+        } else {
+            oldValue.splice(oldValue.indexOf(String(this.id)), 1);
+        }
+
         oldValue = oldValue.join(", ");
 
-        localStorageSave("cart-items", `${oldValue}`);
+        if(!oldValue) {
+            localStorageRemove("cart-items");
+        } else {
+            localStorageSave("cart-items", `${oldValue}`);
+        }
     }
 
     get containerAndThumb() {

@@ -1,5 +1,6 @@
 import summary from "../summary/Summary.js";
 import ProductCard from '../../productCard.js';
+import checkCart from '../checkCart.js';
 
 export default class CartProductCard extends ProductCard {
     constructor(product, quantity = 1) {
@@ -7,17 +8,18 @@ export default class CartProductCard extends ProductCard {
         this.brand = product.brand;
         this.quantity = quantity;
         this.totalPrice = this.price * this.quantity;
+        this.parentCartProduct = null;
     }
 
     create() {
-        const div = this.divTableParent;
+        this.parentCartProduct = this.divTableParent;
         const trAndThs = this.trAndThs;
         const trAndTds = this.trAndTds;
 
-        div.querySelector("table").appendChild(trAndThs);
-        div.querySelector("table").appendChild(trAndTds);
+        this.parentCartProduct.querySelector("table").appendChild(trAndThs);
+        this.parentCartProduct.querySelector("table").appendChild(trAndTds);
 
-        this.addToParent(div);
+        this.addToParent(this.parentCartProduct);
     }
 
     addToParent(product) {
@@ -87,6 +89,28 @@ export default class CartProductCard extends ProductCard {
 
             return tdProduct;
         }
+
+        const updatePriceAndSummary = (method, removeAll=false) => {
+            if(method === "add") {
+                const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
+                addCartItemLclStrg();
+                summary.updateTotal("add", this.price);
+                summary.updateSummary();
+            } else if(method === "remove") {
+                const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
+                deleteCartItemLclStrg(removeAll);
+                console.log(this.totalPrice);
+                if(removeAll) {
+                    checkCart();
+                    var price = this.totalPrice;
+                } else {
+                    var price = this.price
+                }
+                summary.updateTotal("remove", price);
+                summary.updateSummary();
+            }
+            
+        }
         
         const quantity = () => {
             const updateQuantityElText = function() {
@@ -126,10 +150,7 @@ export default class CartProductCard extends ProductCard {
                     updateTotalPriceElText();
                     updateQuantityElText();
                     updateSpanTimesElText();
-                    const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
-                    addCartItemLclStrg();
-                    summary.updateTotal("add", this.price);
-                    summary.updateSummary();
+                    updatePriceAndSummary("add");
 
                 } else if(func === "remove") {
                     if(this.quantity <= 1) {
@@ -141,10 +162,7 @@ export default class CartProductCard extends ProductCard {
                     updateTotalPriceElText();
                     updateQuantityElText();
                     updateSpanTimesElText();
-                    const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
-                    deleteCartItemLclStrg();
-                    summary.updateTotal("remove", this.price);
-                    summary.updateSummary();
+                    updatePriceAndSummary("remove");
                 }
             }.bind(this);
 
@@ -179,9 +197,28 @@ export default class CartProductCard extends ProductCard {
             return tdPrice;
         }
 
+        const deleteItem = () => {
+            const deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("delete-item-btn");
+
+            const spanIconDelete = document.createElement("span");
+            spanIconDelete.classList.add("material-symbols-outlined", "font-wght-300");
+            spanIconDelete.innerText = "delete_forever";
+
+            deleteBtn.appendChild(spanIconDelete);
+
+            deleteBtn.addEventListener("click", () => {
+                this.parentCartProduct.remove();
+                updatePriceAndSummary("remove", true);
+            });
+
+            return deleteBtn;
+        }
+
         tr.appendChild(product());
         tr.appendChild(quantity());
         tr.appendChild(price());
+        tr.appendChild(deleteItem());
 
         return tr;
     }

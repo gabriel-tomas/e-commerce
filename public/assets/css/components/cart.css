@@ -61,7 +61,7 @@
 }
 
 .table-product .row-datas {
-    
+    position: relative;
 }
 
 .table-product .row-datas td:not(.td-product) {
@@ -83,6 +83,17 @@
 
 .row-datas .td-quantity > span {
     margin-inline: 2px;
+}
+
+.row-datas > .delete-item-btn {
+    position: absolute;
+    bottom: calc(clamp(1rem, 0.717rem + 1.417vw, 1.85rem) - 28px);
+    right: calc(clamp(1rem, 0.717rem + 1.417vw, 1.85rem) - 24px);
+    padding: 10px;
+}
+
+.row-datas > .delete-item-btn > span {
+    font-size: clamp(1.56rem, 0.73vw + 1.42rem, 1.7rem);
 }
 
 .td-product .div-title {
