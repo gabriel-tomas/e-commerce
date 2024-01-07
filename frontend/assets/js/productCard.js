@@ -80,7 +80,6 @@ export default class ProductCard {
         if(deleteAll) {
             oldValue = oldValue.filter((id, i) => {
                 if(Number(id) !== this.id) {
-                    console.log(id);
                     return true;
                 }
             });

@@ -99,7 +99,6 @@ export default class CartProductCard extends ProductCard {
             } else if(method === "remove") {
                 const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
                 deleteCartItemLclStrg(removeAll);
-                console.log(this.totalPrice);
                 if(removeAll) {
                     checkCart();
                     var price = this.totalPrice;
