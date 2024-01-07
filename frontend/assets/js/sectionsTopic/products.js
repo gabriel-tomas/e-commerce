@@ -15,7 +15,10 @@ import FilterAditional from '../filter/filterAditional';
 
         async create() {
             this.getQueryItem();
-            if(this.errors.length > 0) return;
+            if(this.errors.length > 0) {
+                console.log(this.errors);
+                return;
+            };
 
             const products = await this.getItems();
             if(products.products.length === 0) {
@@ -23,14 +26,24 @@ import FilterAditional from '../filter/filterAditional';
                 document.querySelector("section.products-layout").style.display = "none";
                 return;
             }
-            const allProducts = products.products;
 
-            this.addToParent(".search-items", allProducts);
+            this.produts = products.products;
+
+            this.addToParent(".search-items", this.produts);
 
             // filter
-            this.filter = new Filter(allProducts);
+            this.filter = new Filter(this.produts);
             this.filter.init();
             FilterAditional.addCategories(this.filter.products);
+            this.setSearchInfos();
+        }
+
+        setSearchInfos() {
+            const searchWord = document.querySelector(".results-search > .results-p > .search-word");
+            const quantityProducts = document.querySelector(".results-search > .results-p > .quantity-products");
+
+            searchWord.innerHTML = this.queryItem;
+            quantityProducts.innerHTML = this.produts.length;
         }
 
         getQueryItem() {

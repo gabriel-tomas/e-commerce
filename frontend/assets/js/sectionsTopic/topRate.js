@@ -9,9 +9,9 @@ import SectionTopic from '../createrSectionTopic';
 
         async create() {
             const allProducts = await this.getAllProducts();
-            const filteredProducts = this.check45Rate(allProducts, 10);
+            this.produts = this.check45Rate(allProducts, 10);
 
-            this.addToParent(".container-top-rated-products", filteredProducts);
+            this.addToParent(".container-top-rated-products", this.produts);
         }
 
         getAllProducts() {

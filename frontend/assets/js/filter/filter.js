@@ -28,6 +28,12 @@ export default class Filter extends SectionTopic {
         });
     }
 
+    setSearchInfos() {
+        const quantityProducts = document.querySelector(".results-search > .results-p > .quantity-products");
+
+        quantityProducts.innerHTML = this.outputProducts.length;
+    }
+
     OrderByLower() {
         this.outputProducts = this.products.sort(function(a, b) {
             return a.price - b.price;
@@ -65,6 +71,7 @@ export default class Filter extends SectionTopic {
 
             this.removeItemsOfParent(this.parentProducts);
             setTimeout(() => this.addToParent(this.parentProducts, this.outputProducts), 100);
+            this.setSearchInfos();
         });
 
         function orderPrice() {

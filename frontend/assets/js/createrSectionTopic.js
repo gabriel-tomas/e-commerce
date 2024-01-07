@@ -2,6 +2,10 @@
 import ProductCard from "./productCard";
 
 export default class SectionTopic {
+    constructor() {
+        this.produts = null;
+    }
+
     addToParent(parent, productsToAdd) {
         if(typeof parent !== "string") console.warn("parent must be a string css selector");
 
