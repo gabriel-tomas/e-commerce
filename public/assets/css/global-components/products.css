@@ -22,13 +22,11 @@
 }
 
 .btn-add-to-cart:hover {
-    background-color: rgba(182, 182, 182, 0.836);
-    /* background-color: rgb(255, 255, 255);
-    color: rgb(80, 80, 80); */
+    background-color: var(--neutral-9);
 }
 
 .btn-add-to-cart:active {
-    background-color: rgba(247, 247, 247, 0.836);
+    background-color: var(--neutral-10);
 }
 
 
