@@ -216,8 +216,9 @@ export default class CartProductCard extends ProductCard {
 
         tr.appendChild(product());
         tr.appendChild(quantity());
-        tr.appendChild(price());
-        tr.appendChild(deleteItem());
+        const tdPrice = price();
+        tdPrice.appendChild(deleteItem());
+        tr.appendChild(tdPrice);
 
         return tr;
     }

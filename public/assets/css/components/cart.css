@@ -60,7 +60,7 @@
     min-width: clamp(3.125rem, 1.042rem + 10.417vw, 9.375rem);
 }
 
-.table-product .row-datas {
+.table-product > .row-datas {
     position: relative;
 }
 
@@ -85,7 +85,11 @@
     margin-inline: 2px;
 }
 
-.row-datas > .delete-item-btn {
+.row-datas > .td-price {
+    position: relative;
+}
+
+.row-datas > .td-price > .delete-item-btn {
     position: absolute;
     bottom: calc(clamp(1rem, 0.717rem + 1.417vw, 1.85rem) - 28px);
     right: calc(clamp(1rem, 0.717rem + 1.417vw, 1.85rem) - 24px);
