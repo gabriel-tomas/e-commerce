@@ -70,11 +70,15 @@
     margin-bottom: 1rem;
 }
 
-.container-buy a {
+.container-buy a, .container-buy > .container-btn-cart > button {
     display: grid;
     height: 60px;
     place-items: center;
     border-radius: 10px;
+}
+
+.container-buy > .container-btn-cart > button {
+    width: 100%;
 }
 
 .container-buy a.primary > button, .container-buy a.secondary > button {
@@ -85,7 +89,7 @@
     background-color: var(--primary);
 }
 
-.container-buy a.secondary {
+.container-buy button.secondary {
     background-color: var(--secondary);
 }
 
@@ -110,5 +114,15 @@
         height: 60px;
         border-radius: 5px;
         border: 1px solid var(--neutral-6);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .bottom-content {
+        display: block;
+    }
+
+    .bottom-content > .right-content .container-title > h1 {
+        margin-top: 30px;
     }
 }
