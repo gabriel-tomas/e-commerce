@@ -1,4 +1,5 @@
 import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
+import messages from "../messages";
 
 export default class Product {
     constructor(product) {
@@ -112,6 +113,7 @@ export default class Product {
         btnAddCart.addEventListener("click", () => {
             const addCartItemLclStrg = Product.addCartItemLclStrg.bind(this);
             addCartItemLclStrg();
+            messages("success", "Product successfully added to cart");
         });
     }
 
