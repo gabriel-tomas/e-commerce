@@ -1,6 +1,7 @@
 import summary from "../summary/Summary.js";
 import ProductCard from '../../productCard.js';
 import checkCart from '../checkCart.js';
+import messages from "../../messages.js";
 
 export default class CartProductCard extends ProductCard {
     constructor(product, quantity = 1) {
@@ -209,6 +210,7 @@ export default class CartProductCard extends ProductCard {
             deleteBtn.addEventListener("click", () => {
                 this.parentCartProduct.remove();
                 updatePriceAndSummary("remove", true);
+                messages("success", "Product removed successfully");
             });
 
             return deleteBtn;

@@ -1,7 +1,6 @@
 .message {
     visibility: hidden;
-    opacity: 0.1; 
-    transition: .23s opacity;
+    opacity: 0; 
     position: fixed;
     transform: translateX(-50%);
     left: 50%;
@@ -14,10 +13,48 @@
     text-align: center;
 }
 
+.message > p {
+    font-family: var(--title-font);
+}
+
+.message > .counter-added {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    background-color: var(--accent);
+}
+
 .message.danger {
     background-color: var(--red-0);
 }
 
 .message.success {
     background-color: var(--primary);
+}
+
+.message.active {
+    animation: opacityMessage 4s;
+}
+
+@keyframes opacityMessage {
+    0% {
+        visibility: visible;
+    }
+
+    10% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
