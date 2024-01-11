@@ -24,12 +24,12 @@ import FilterAditional from '../filter/filterAditional';
             
             if(!this.productNotFound(products)) return;
 
-            this.produts = products.products;
+            this.products = products.products;
 
-            this.addToParent(".search-items", this.produts);
+            this.addToParent(".search-items", this.products);
 
             // filter
-            this.filter = new Filter(this.produts);
+            this.filter = new Filter(this.products);
             this.filter.init();
             FilterAditional.addCategories(this.filter.products);
             this.setSearchInfos();
@@ -51,7 +51,7 @@ import FilterAditional from '../filter/filterAditional';
             const quantityProducts = document.querySelector(".results-search > .results-p > .quantity-products");
 
             searchWord.innerHTML = this.queryItem;
-            quantityProducts.innerHTML = this.produts.length;
+            quantityProducts.innerHTML = this.products.length;
         }
 
         getQueryItem() {

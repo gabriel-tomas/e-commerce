@@ -2,8 +2,8 @@
 import ProductCard from "./productCard";
 
 export default class SectionTopic {
-    constructor() {
-        this.produts = null;
+    constructor(products = null) {
+        this.products = products;
     }
 
     addToParent(parent, productsToAdd) {
