@@ -40,7 +40,7 @@
     background-color: var(--secondary);
     margin-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
     padding: 24px;
-    box-shadow: 10px 10px 15px var(--neutral-7);
+    box-shadow: 0px 0px 15px var(--neutral-7);
     border-radius: 15px;
     width: clamp(260px, 30%, 350px);
 }

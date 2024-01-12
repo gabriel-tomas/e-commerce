@@ -14,18 +14,22 @@ export default class SectionTopic {
 
         parent = document.querySelector(parent);
 
-        const loadProducts = document.querySelector(".load-products")
+        const loadProducts = document.querySelector(".load-products");
         
         if(productsToAdd.length <= 10) {
             productsToAdd.forEach(product => {
                 parent.appendChild(new ProductCard(product).create());
             });
-            loadProducts.style.display = "none";
+
+            if(loadProducts) {
+                loadProducts.style.display = "none";
+            }
+            
             return;
         }
 
         loadProducts.style.display = "block";
-        this.productsDelivery = productsToAdd;
+        this.productsDelivery = [...productsToAdd];
         this.addFirst10Products(parent);
         loadProducts.addEventListener("click", () => this.deliveryProducts(parent));
     }

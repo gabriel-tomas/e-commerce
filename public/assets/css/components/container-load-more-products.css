@@ -1,0 +1,19 @@
+.container-load-more-products {
+    border-top: 1px solid var(--neutral-0);
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container-load-more-products > .load-products {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 15px;
+    text-transform: capitalize;
+    letter-spacing: .05rem;
+    border-radius: 6px;
+    transition: .1s background-color;
+}
+
+.container-load-more-products > .load-products:hover {
+    background-color: var(--accent);
+}

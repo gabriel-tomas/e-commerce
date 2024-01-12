@@ -90,7 +90,9 @@ export default class Filter extends SectionTopic {
                 var categoriesItems = this.getCategoriesSelected();
             }
 
-            if(!minPrice && !maxPrice && !categoriesItems) return;
+            if(!minPrice && !maxPrice && !categoriesItems) {
+                this.outputProducts = [...this.products];
+            };
 
             if(firstToSet.select === "first") {
                 firstToSet.filter = "second";
