@@ -2,6 +2,7 @@ import productsMethods from '../productApi';
 import SectionTopic from '../createrSectionTopic';
 import Filter from '../filter/filter';
 import FilterAditional from '../filter/filterAditional';
+import ModelLoad from "../modelLoad";
 
 (() => {
     class Products extends SectionTopic {
@@ -25,6 +26,7 @@ import FilterAditional from '../filter/filterAditional';
             this.products = products.products;
 
             this.addToParent(".search-items", this.products);
+            ModelLoad.disable(".product-product-model-load");
 
             // filter
             this.filter = new Filter(this.products);

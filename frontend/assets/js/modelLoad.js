@@ -1,8 +1,14 @@
 export default class ModelLoad {
-    static createModel(parent, quantity) {
+    constructor(modelClassName) {
+        this.models = {
+            productCard: `<div product-id="4" class="container-product ${modelClassName}-product-model-load product-model-load model-load"><a class="product-link" href="#"><div class="container-thumbnail"></div><div class="container-bottom-infos"><div class="container-title"><span class="normal-font font-size-base"></span></div><div class="container-price-and-others"><span class="span-price normal-font font-size-md"></span><span class="discount normal-font"></span></div></div></a></div>`,
+        }
+    }
+
+    createModel(parent, quantity, model) {
         parent = document.querySelector(parent);
         for(let i = 0; i < quantity; i++) {
-            parent.innerHTML += `<div product-id="4" class="container-product for-you-product-model-load"><a class="product-link" href="#"><div class="container-thumbnail"></div><div class="container-bottom-infos"><div class="container-title"><span class="normal-font font-size-base"></span></div><div class="container-price-and-others"><span class="span-price normal-font font-size-md"></span><span class="discount normal-font"></span></div></div></a></div>`
+            parent.innerHTML += this.models[model];
         }
     }
 
@@ -14,6 +20,3 @@ export default class ModelLoad {
         });
     }
 }
-
-// for you
-ModelLoad.createModel(".for-you-products", 3);

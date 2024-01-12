@@ -1,5 +1,6 @@
 import productsMethods from "../productApi";
 import SectionTopic from '../createrSectionTopic';
+import ModelLoad from "../modelLoad";
 
 (() => {
     class SectionTopRate extends SectionTopic {
@@ -12,6 +13,7 @@ import SectionTopic from '../createrSectionTopic';
             this.products = this.check45Rate(allProducts, 10);
 
             this.addToParent(".container-top-rated-products", this.products);
+            ModelLoad.disable(".top-rated-product-model-load");
         }
 
         getAllProducts() {

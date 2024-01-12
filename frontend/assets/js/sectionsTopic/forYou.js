@@ -20,6 +20,7 @@ import ModelLoad from "../modelLoad";
 
         async create() {
             let allProducts = null;
+            let modelLoadName = "for-you";
 
             if(window.location.pathname === "/foryou") {
                 // this.products = await this.separateInterestItems(this.interests, 300);
@@ -42,10 +43,11 @@ import ModelLoad from "../modelLoad";
                 this.filter.init();
                 FilterAditional.addCategories(this.filter.products);
                 this.setSearchInfos();
+                modelLoadName = "product";
             }
             
             this.addToParent(parent, this.products);
-            ModelLoad.disable(".for-you-product-model-load");
+            ModelLoad.disable(`.${modelLoadName}-product-model-load`);
         }
 
         randomCategories() {
