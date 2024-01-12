@@ -1,5 +1,10 @@
 import SectionTopic from '../createrSectionTopic';
 
+const firstToSet = {
+    select: null,
+    filter: null,
+};
+
 export default class Filter extends SectionTopic {
     constructor(products) {
         super();
@@ -17,6 +22,12 @@ export default class Filter extends SectionTopic {
         const select = document.querySelector(".button.order");
 
         select.addEventListener("change", (e) => {
+            if(firstToSet.filter === "first") {
+                firstToSet.select = "second";
+            } else {
+                firstToSet.select = "first";
+            }
+
             const value = e.target.value;
             if(value === "lower") {
                 this.OrderByLower();
@@ -78,6 +89,16 @@ export default class Filter extends SectionTopic {
 
             if(!minPrice && !maxPrice && !categoriesItems) return;
 
+            if(firstToSet.select === "first") {
+                firstToSet.filter = "second";
+            } else {
+                firstToSet.filter = "first";
+            }
+
+            if(firstToSet.filter === "first" && firstToSet.select === "second") {
+                select.value = "disabled";
+            }
+
             if(productsMinMaxPrice && categoriesItems) {
                 this.outputProducts = this.getProductsRangeAndCategories(productsMinMaxPrice, categoriesItems);
             } else if(productsMinMaxPrice) {
@@ -90,12 +111,8 @@ export default class Filter extends SectionTopic {
 
             this.removeItemsOfParent(this.parentProducts);
             setTimeout(() => this.addToParent(this.parentProducts, this.outputProducts), 100);
-            /* this.setSearchInfos(); */
             boxFilter.style.visibility = "hidden";
             btnFilter.removeAttribute("style");
-            if(!select.value === "disabled") {
-                select.value = "disabled";
-            }
         });
 
         function orderPrice() {
