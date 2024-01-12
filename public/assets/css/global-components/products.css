@@ -60,3 +60,12 @@
 .container-bottom-infos .container-price-and-others {
     margin-top: .5rem;
 }
+
+@media screen and (max-width: 560px){
+    .btn-add-to-cart:hover {
+        background-color: var(--neutral-3);
+    }
+    .btn-add-to-cart:active {
+        background-color: var(--neutral-9);
+    }    
+}

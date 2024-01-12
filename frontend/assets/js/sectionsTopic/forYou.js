@@ -1,6 +1,8 @@
-import SectionTopic from '../createrSectionTopic';
 import productsMethods from "../productApi";
 import {localStorageGet} from "../localStorageSaverAndGet";
+import SectionTopic from '../createrSectionTopic';
+import Filter from '../filter/filter';
+import FilterAditional from '../filter/filterAditional';
 
 (() => {
     class ForYou extends SectionTopic {
@@ -16,13 +18,32 @@ import {localStorageGet} from "../localStorageSaverAndGet";
         }
 
         async create() {
+            let allProducts = null;
+
+            if(window.location.pathname === "/foryou") {
+                // this.products = await this.separateInterestItems(this.interests, 300);
+                this.queryItem = "For You";
+                var parent = ".search-items";
+                allProducts = true;
+            } else {
+                var parent = ".for-you-products";
+            }
+
             if(this.interests) {
-                this.products = await this.separateInterestItems(this.interests);
+                this.products = await this.separateInterestItems(this.interests, allProducts);
             } else {
                 const interests = await this.randomCategories();
-                this.products = await this.separateInterestItems(interests);
+                this.products = await this.separateInterestItems(interests, allProducts);
             }
-            this.addToParent(".for-you-products", this.products);
+
+            if(window.location.pathname === "/foryou") {
+                this.filter = new Filter(this.products);
+                this.filter.init();
+                FilterAditional.addCategories(this.filter.products);
+                this.setSearchInfos();
+            }
+            
+            this.addToParent(parent, this.products);
         }
 
         randomCategories() {
@@ -42,7 +63,7 @@ import {localStorageGet} from "../localStorageSaverAndGet";
             });
         }
         
-        separateInterestItems(array) {
+        separateInterestItems(array, allProducts = false)  {
             const rands = [randNum(), randNum(), randNum(), randNum(), randNum()]
             const maxProductToAdd = 5;
             let numRand = 0;
@@ -51,12 +72,19 @@ import {localStorageGet} from "../localStorageSaverAndGet";
                 let products = [];
                 return new Promise((resolve) => {
                     productsMethods.setCategoryProducts(category, e => {
-                        for(let product in e.products) {
-                            if(Number(product) === rands[numRand]) {
+                        if(allProducts) {
+                            for(let product in e.products) {
                                 products.push(e.products[Number(product)]);
-                                numRand++;
-                                if(numRand === maxProductToAdd) break;
-                            };
+                            }
+                        } else {
+                            for(let product in e.products) {
+                                if(Number(product) === rands[numRand]) {
+                                    products.push(e.products[Number(product)]);
+                                    numRand++;
+                                    if(numRand === maxProductToAdd) break;
+                                };
+                            }
+
                         }
                         resolve(products);
                     });

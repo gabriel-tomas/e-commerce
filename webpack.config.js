@@ -7,6 +7,7 @@ module.exports = {
         home: './frontend/home.js',
         cart: './frontend/cart.js',
         products: './frontend/products.js',
+        productsForYou: './frontend/productsForYou.js',
         product: './frontend/product.js',
     },
     output: {

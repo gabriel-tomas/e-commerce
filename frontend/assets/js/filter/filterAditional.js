@@ -2,6 +2,8 @@ export default class FilterAditional {
     static addListenerClick() {
         const btnFilter = document.querySelector(".button.filter");
         const boxFilter = document.querySelector(".filter-additional-box");
+        if(!btnFilter) return;
+        if(!boxFilter) return;
 
         btnFilter.addEventListener("click", () => {
             if(window.getComputedStyle(boxFilter).visibility === "hidden") {

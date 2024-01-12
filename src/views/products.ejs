@@ -6,7 +6,7 @@
     </div>
     <div class="filter-options space-sides max-width-section-align space-top">
         <select class="button order normal-font font-size-base">
-            <option selected disabled>Order by</option>
+            <option selected disabled value="disabled">Order by</option>
             <option value="lower">Lowest price</option>
             <option value="bigger">Biggest price</option>
         </select>
@@ -52,4 +52,8 @@
         </div>
     </section>
 <%- include("./includes/footer") %>
-<%- include("./includes/end-footer/end-footer-search") %>
+<% if(forYou) { %>
+    <%- include("./includes/end-footer/end-footer-forYou") %>
+<% } else { %>
+    <%- include("./includes/end-footer/end-footer-search") %>
+<% } %>

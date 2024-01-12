@@ -8,9 +8,7 @@ import FilterAditional from '../filter/filterAditional';
         constructor() {
             super();
             this.errors = [];
-            this.queryItem = null;
             this.query = null;
-            this.filter = null;
         }
 
         async create() {
@@ -44,14 +42,6 @@ import FilterAditional from '../filter/filterAditional';
                 return false;
             }
             return true;
-        }
-
-        setSearchInfos() {
-            const searchWord = document.querySelector(".results-search > .results-p > .search-word");
-            const quantityProducts = document.querySelector(".results-search > .results-p > .quantity-products");
-
-            searchWord.innerHTML = this.queryItem;
-            quantityProducts.innerHTML = this.products.length;
         }
 
         getQueryItem() {
