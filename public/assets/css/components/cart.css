@@ -96,6 +96,10 @@
     padding: 10px;
 }
 
+.row-datas > .td-price > .delete-item-btn:hover {
+    color: var(--red-1);
+}
+
 .row-datas > .delete-item-btn > span {
     font-size: clamp(1.56rem, 0.73vw + 1.42rem, 1.7rem);
 }

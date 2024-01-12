@@ -62,7 +62,7 @@ export default class ProductCard {
         oldValue = localStorageGet("cart-items");
 
         if(oldValue === null) {
-            localStorageSave("cart-items", this.id);
+            localStorageSave("cart-items", String(this.id));
             return;
         };
 
@@ -72,9 +72,8 @@ export default class ProductCard {
     static deleteCartItemLclStrg(deleteAll=false) {
         let oldValue;
         oldValue = localStorageGet("cart-items");
-        if(oldValue === null) {
-            return;
-        };
+        oldValue = String(oldValue);
+        if(oldValue === null) return;
 
         oldValue = oldValue.split(',');
         oldValue = oldValue.map(value => value.trim());
