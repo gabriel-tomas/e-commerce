@@ -6,3 +6,5 @@ import './assets/js/forYou/forYouChoicer.js';
 import './assets/js/sectionsTopic/forYou.js';
 // > top rated 
 import './assets/js/sectionsTopic/topRate.js';
+// > model load
+import './assets/js/modelLoad.js';

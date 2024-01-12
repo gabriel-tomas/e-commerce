@@ -3,6 +3,7 @@ import {localStorageGet} from "../localStorageSaverAndGet";
 import SectionTopic from '../createrSectionTopic';
 import Filter from '../filter/filter';
 import FilterAditional from '../filter/filterAditional';
+import ModelLoad from "../modelLoad";
 
 (() => {
     class ForYou extends SectionTopic {
@@ -44,6 +45,7 @@ import FilterAditional from '../filter/filterAditional';
             }
             
             this.addToParent(parent, this.products);
+            ModelLoad.disable(".for-you-product-model-load");
         }
 
         randomCategories() {
