@@ -4,6 +4,7 @@ const firstToSet = {
     select: null,
     filter: null,
 };
+let selectValue;
 
 export default class Filter extends SectionTopic {
     constructor(products) {
@@ -29,6 +30,8 @@ export default class Filter extends SectionTopic {
             }
 
             const value = e.target.value;
+            selectValue = value;
+
             if(value === "lower") {
                 this.OrderByLower();
             } else if(value === "bigger") {
@@ -105,6 +108,17 @@ export default class Filter extends SectionTopic {
                 this.outputProducts = productsMinMaxPrice;
             } else if(categoriesItems) {
                 this.outputProducts = categoriesItems;
+            }
+
+            // reorder products to what the user selected
+            if(firstToSet.filter === "second" && firstToSet.select === "first") {
+                if(selectValue === "lower") {
+                    select.value = "lower";
+                    this.OrderByLower();
+                } else if(selectValue === "bigger") {
+                    select.value = "bigger";
+                    this.OrderByBigger();
+                }
             }
 
             if(this.outputProducts === null) return;
