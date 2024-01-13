@@ -10,6 +10,10 @@ html, button, input {
     color: var(--text);
 }
 
+body {
+    background-color: var(--wth-color);
+}
+
 button, input {
     border: none;
     background-color: transparent;

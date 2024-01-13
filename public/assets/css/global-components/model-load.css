@@ -19,6 +19,37 @@
     animation: AnimationName 1s ease infinite;
 }
 
+.product-model-load .container-bottom-infos .container-price-and-others {
+    display: flex;
+}
+
+.product-model-load .container-bottom-infos .container-price-and-others > .span-price {
+    height: 18px;
+    border-radius: 5px;
+    width: 22%;
+    display: block;
+    
+    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
+    background-size: 600% 600%;
+    
+    -webkit-animation: AnimationName 1s ease infinite;
+    -moz-animation: AnimationName 1s ease infinite;
+    animation: AnimationName 1s ease infinite;
+}
+
+.product-model-load .container-bottom-infos .container-price-and-others > .discount {
+    height: 18px;
+    border-radius: 5px;
+    width: 18%;
+    display: block;
+    
+    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
+    background-size: 600% 600%;
+    
+    -webkit-animation: AnimationName 1s ease infinite;
+    -moz-animation: AnimationName 1s ease infinite;
+    animation: AnimationName 1s ease infinite;
+}
 
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
