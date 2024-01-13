@@ -1,4 +1,6 @@
 import productsMethods from "./productApi";
+import ModelLoad from "./modelLoad";
+
 (() => {
     function createCategory(text) {
         (function create() {
@@ -6,6 +8,7 @@ import productsMethods from "./productApi";
             const tree = createTreeEl();
     
             containerCategories.appendChild(tree);
+            ModelLoad.disable(".category-category-model-load");
         })();
     
         function createTreeEl() {

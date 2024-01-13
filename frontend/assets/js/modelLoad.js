@@ -2,6 +2,7 @@ export default class ModelLoad {
     constructor(modelClassName) {
         this.models = {
             productCard: `<div product-id="4" class="container-product ${modelClassName}-product-model-load product-model-load model-load"><a class="product-link" href="#"><div class="container-thumbnail"></div><div class="container-bottom-infos"><div class="container-title"><span class="normal-font font-size-base"></span></div><div class="container-price-and-others"><span class="span-price normal-font font-size-md"></span><span class="discount normal-font"></span></div></div></a></div>`,
+            categoryCard: `<div class="container-category ${modelClassName}-category-model-load model-load"><a class="link-category font-size-base font-wght-400" href="#"></a></div>`
         }
     }
 
