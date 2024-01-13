@@ -7,49 +7,55 @@
     animation: AnimationName 1s ease infinite;
 }
 
-.product-model-load .container-bottom-infos .container-title {
+/* product card */
+.product-model-load .container-bottom-infos .container-title, .product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-brand, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-divided, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total {
     height: 18px;
     border-radius: 5px;
-    
-    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
-    background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 1s ease infinite;
-    -moz-animation: AnimationName 1s ease infinite;
-    animation: AnimationName 1s ease infinite;
 }
 
 .product-model-load .container-bottom-infos .container-price-and-others {
     display: flex;
 }
 
-.product-model-load .container-bottom-infos .container-price-and-others > .span-price {
-    height: 18px;
-    border-radius: 5px;
+.product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount {
     width: 22%;
     display: block;
-    
-    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
-    background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 1s ease infinite;
-    -moz-animation: AnimationName 1s ease infinite;
-    animation: AnimationName 1s ease infinite;
 }
 
 .product-model-load .container-bottom-infos .container-price-and-others > .discount {
-    height: 18px;
-    border-radius: 5px;
     width: 18%;
-    display: block;
-    
-    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
-    background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 1s ease infinite;
-    -moz-animation: AnimationName 1s ease infinite;
-    animation: AnimationName 1s ease infinite;
 }
+
+/* cart card */
+.model-load-item-cart {
+    
+}
+
+.model-load-item-cart > .table-product > tbody > .row-headers {
+    border-bottom: none;
+}
+
+.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .divImg {
+    border-radius: 10px;
+}
+
+.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title {
+    width: 72%;
+}
+
+.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-brand {
+    width: 50%;
+    margin-top: .5rem;
+}
+
+.model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-divided, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total {
+    width: 70%;
+}
+
+.model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total {
+    margin-top: .5rem;
+}
+
 
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
