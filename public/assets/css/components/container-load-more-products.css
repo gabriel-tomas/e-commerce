@@ -12,6 +12,7 @@
     letter-spacing: .05rem;
     border-radius: 6px;
     transition: .1s background-color;
+    display: none;
 }
 
 .container-load-more-products > .load-products:hover {
