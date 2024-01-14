@@ -280,12 +280,3 @@
         color: var(--red-1);
     }    
 }
-
-/* @media screen and (max-width: 560px){
-    .btn-add-to-cart:hover {
-        background-color: var(--neutral-3);
-    }
-    .btn-add-to-cart:active {
-        background-color: var(--neutral-9);
-    }    
-} */
