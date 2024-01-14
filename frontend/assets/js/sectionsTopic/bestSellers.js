@@ -6,11 +6,9 @@ import ModelLoad from "../modelLoad";
         constructor() {
             super();
         }
-
-        async create() {
-            this.products = await SectionBestSellers.getAllProducts(20, 9, this.filterItems);
-
-            console.log(this.products);
+        
+        async create(limit, quantityProducts) {
+            this.products = await SectionBestSellers.getAllProducts(limit, quantityProducts, this.filterItems);
 
             this.addToParent(".container-best-sellers-products", this.products);
             ModelLoad.disable(".best-seller-product-model-load");
@@ -22,30 +20,31 @@ import ModelLoad from "../modelLoad";
                 return;
             }
 
-            let rates = 0;
-            let valuesRates = 0;
+            let stocks = 0;
+            let valuesStocks = 0;
 
             products.forEach(value => { 
-                rates++;
-                valuesRates += value.rating;
+                stocks++;
+                valuesStocks += value.stock;
             });
 
-            const media = valuesRates / rates;
+            const media = valuesStocks / stocks;
+            const outOfStockValue = media / 2
 
-            const allAboveAverage = products.filter((value) => {
+            const outOfStockItems = products.filter((value) => {
                 if(quantityProducts === 0) {
                     return;
                 }
 
-                if(value.rating >= media) {
+                if(value.stock <= outOfStockValue) {
                     quantityProducts--;
                     return true;
                 }
             });
 
-            return allAboveAverage;
+            return outOfStockItems;
         }
     }
     
-    new SectionBestSellers().create();
+    new SectionBestSellers().create(45, 9);
 })();

@@ -6,9 +6,9 @@ import ModelLoad from "../modelLoad";
         constructor() {
             super();
         }
-
-        async create() {
-            this.products = await SectionTopRate.getAllProducts(20, 9, this.filterItems);
+        
+        async create(limit, quantityProducts) {
+            this.products = await SectionTopRate.getAllProducts(limit, quantityProducts, this.filterItems);
 
             this.addToParent(".container-top-rated-products", this.products);
             ModelLoad.disable(".top-rated-product-model-load");
@@ -45,5 +45,5 @@ import ModelLoad from "../modelLoad";
         }
     }
     
-    new SectionTopRate().create();
+    new SectionTopRate().create(20, 9);
 })();

@@ -74,6 +74,18 @@ export default class SectionTopic {
         }
     }
 
+    // About getAllProducts
+    // get all items, randomizes them and filter(you create the filter) them
+    // and return all products filtered and randomized.
+
+    // Parameters
+    // limit = limit of products for filtered search  |  quantityProducts = expected quantity of products 
+    // filter = will be created in class inherited from SectionTopic - filter products by rating, stock... 
+
+    // When will these parameters be sent?
+    // these parameters will be sent in the create function that will be created in the class inherited from SectionTopic
+    
+
     static getAllProducts(limit, quantityProducts, filter) {
         if(typeof limit !== "number") {
             console.warn("limit must be number");
@@ -84,11 +96,11 @@ export default class SectionTopic {
             productsMethods.getAllProducts(0, limit, products => {
                 products = products.products;
                 
-                const itemFiltered = filter(products, quantityProducts);
+                const itemsRandomized = SectionTopic.randomizeProducts([...products]);
 
-                const itemsRandomized = SectionTopic.randomizeProducts([...itemFiltered]);
+                const itemFiltered = filter(itemsRandomized, quantityProducts);
 
-                resolve(itemsRandomized);
+                resolve(itemFiltered);
             });
         });
     }
