@@ -1,4 +1,5 @@
 /* import productsMethods from "./productApi"; */
+import productsMethods from "./productApi";
 import ProductCard from "./productCard";
 
 export default class SectionTopic {
@@ -25,6 +26,14 @@ export default class SectionTopic {
                 loadProducts.style.display = "none";
             }
             
+            return;
+        }
+
+        if(!loadProducts && productsToAdd.length > 10) {
+            productsToAdd.forEach(product => {
+                parent.appendChild(new ProductCard(product).create());
+            });
+            console.warn("please add the load-products button to make product delivery more efficient or reduce the quantity of products to 10");
             return;
         }
 
@@ -63,5 +72,35 @@ export default class SectionTopic {
             document.querySelector(".load-products").style.display = "none";
             return;
         }
+    }
+
+    static getAllProducts(limit, quantityProducts, filter) {
+        if(typeof limit !== "number") {
+            console.warn("limit must be number");
+            return;
+        }
+
+        return new Promise((resolve) => { 
+            productsMethods.getAllProducts(0, limit, products => {
+                products = products.products;
+                
+                const itemFiltered = filter(products, quantityProducts);
+
+                const itemsRandomized = SectionTopic.randomizeProducts([...itemFiltered]);
+
+                resolve(itemsRandomized);
+            });
+        });
+    }
+
+    static randomizeProducts(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        return array;
     }
 }

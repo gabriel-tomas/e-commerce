@@ -2,16 +2,18 @@ import SectionTopic from '../createrSectionTopic';
 import ModelLoad from "../modelLoad";
 
 (() => {
-    class SectionTopRate extends SectionTopic {
+    class SectionBestSellers extends SectionTopic {
         constructor() {
             super();
         }
 
         async create() {
-            this.products = await SectionTopRate.getAllProducts(20, 9, this.filterItems);
+            this.products = await SectionBestSellers.getAllProducts(20, 9, this.filterItems);
 
-            this.addToParent(".container-top-rated-products", this.products);
-            ModelLoad.disable(".top-rated-product-model-load");
+            console.log(this.products);
+
+            this.addToParent(".container-best-sellers-products", this.products);
+            ModelLoad.disable(".best-seller-product-model-load");
         }
 
         filterItems(products, quantityProducts) {
@@ -45,5 +47,5 @@ import ModelLoad from "../modelLoad";
         }
     }
     
-    new SectionTopRate().create();
+    new SectionBestSellers().create();
 })();
