@@ -6,14 +6,43 @@
     visibility: hidden;
     position: fixed;
     top: 0px;
-    left: 0px;
-    width: 50vw;
+    left: -70vw;
+    width: 70vw;
     background-color: var(--back-color);
     z-index: 11;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 10px 0px 15px var(--neutral-8);
+    transition: .2s left, .2s visibility;
 }
 
 .menu-box.active {
     visibility: visible;
+    left: 0;
+}
+
+.menu-box > .menu-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-box .filled { 
+    font-variation-settings: 'FILL' 1;
+}
+
+.menu-box > .my-account > .options > .options-item { 
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.menu-box > .menu-header > .container-account {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: right;
 }
 
 @media screen and (max-width: 744px) {

@@ -1,12 +1,36 @@
 <body>
     <%- include("./messages") %>
-    <header>
+    <header class="header">
         <div class="container-left">
             <button class="menu-btn">
                 <span class="font-size-lg material-symbols-outlined">menu</span>
             </button>
             <div class="menu-box">
-
+                <header class="menu-header">
+                    <a class="container-account" href="#">
+                        <div>
+                            <p class="font-size-base">login or sign up</p>
+                        </div>
+                        <span class="material-symbols-outlined font-size-xl">account_circle</span>
+                    </a>
+                </header>
+                <section class="my-account">
+                    <div class="container-title">
+                        <h1 class="font-size-md">My account</h1>
+                    </div>
+                    <div class="options">
+                        <a class="options-item" href="#">
+                            <span class="material-symbols-outlined filled font-size-lg">person</span>
+                            <p class="font-size-base">My data</p>
+                        </a>
+                    </div>
+                </section>
+                <section class="help-configs space-top-3">
+                    <div class="container-title">
+                        <h1 class="font-size-md">Help and configuration</h1>
+                    </div>
+                    <div class="options"></div>
+                </section>
             </div>
         </div>
         <div class="container-search">
