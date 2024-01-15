@@ -2,9 +2,21 @@
     const searchBtn = document.querySelector("header .search-btn");
     const searchBox = document.querySelector("header #search-box");
     const arrowRight = document.querySelector("header .right-arrow");
+
+    window.matchMedia("(max-width: 744px)").addEventListener("change", e => {
+        if(e.matches) {
+            searchBox.style.width = "100%";
+            searchBox.style.opacity = "1";
+            searchBox.style.visibility = "visible";
+        } else {
+            searchBox.style.width = "0%";
+            searchBox.style.opacity = "0";
+            searchBox.style.visibility = "hidden";
+        }
+    });
     
     searchBtn.addEventListener("click", () => {
-        if(!window.matchMedia("(max-width: 744px)").matches ) {
+        if(!window.matchMedia("(max-width: 744px)").matches) {
             if(getComputedStyle(searchBox).visibility === "hidden") {
                 searchBoxVisibility(true);
                 changeOpacity(true, searchBox);

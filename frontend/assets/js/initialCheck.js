@@ -12,6 +12,14 @@ import changeThemeBtnStatus from "./header/changeThemeBtnStatus";
         darkMode.off;
         changeThemeBtnStatus(false);
     };
-
     checkDarkMode();
+
+    const checkMenu = () => {
+        const menuBox = document.querySelector(".menu-box");
+        const darkModeBtn = document.querySelector(".change-page-theme");
+        if(window.matchMedia("(max-width: 744px)").matches) {
+            menuBox.appendChild(darkModeBtn);
+        }
+    }
+    checkMenu();
 })();

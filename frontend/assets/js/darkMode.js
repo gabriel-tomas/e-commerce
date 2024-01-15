@@ -3,7 +3,7 @@ export default {
 
     get on () {
         this.root.style.setProperty('--text', '#e4ddf3');
-        this.root.style.setProperty('--back-color', '#0c0c0c');
+        this.root.style.setProperty('--back-color', '#101010');
         this.root.style.setProperty('--background', '#251a3d');
         this.root.style.setProperty('--primary', '#8db342');
         this.root.style.setProperty('--secondary', '#2b1c4a');

@@ -1,0 +1,14 @@
+.container-left {
+    display: none;
+}
+
+.menu-box {
+    visibility: hidden;
+    position: absolute;
+}
+
+@media screen and (max-width: 744px) {
+    .container-left {
+        display: block;
+    }
+}
