@@ -2,7 +2,7 @@
     min-width: clamp(100px, 50vw, 380px);
     height: auto;
     background-color: var(--neutral-0);
-    border: 1px solid var(--background);
+    border: 1px solid var(--products-border-color);
     border-radius: 15px;
     position: relative;
 }

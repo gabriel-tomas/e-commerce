@@ -8,13 +8,14 @@ import changeThemeAnimation from "./changeThemeAnimation";
         get on () {
             root.style.setProperty('--text', '#e4ddf3');
             root.style.setProperty('--back-color', '#0c0c0c');
-            root.style.setProperty('--background', '#0c0816');
+            root.style.setProperty('--background', '#251a3d');
             root.style.setProperty('--primary', '#8db342');
             root.style.setProperty('--secondary', '#2b1c4a');
             root.style.setProperty('--secondary-darker', '#1c1231');
             root.style.setProperty('--accent', '#a9c86a');
     
             root.style.setProperty('--scrollbar-back', 'rgb(39 39 39 / 69%)');
+            root.style.setProperty('--products-border-color', 'rgba(131, 131, 131, 0.12)');
 
             root.style.setProperty('--model-load-back', '#1b1b1b');
             root.style.setProperty('--model-load-back-accent', '#5f5f5f');
