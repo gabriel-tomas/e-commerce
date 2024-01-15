@@ -1,5 +1,6 @@
 /* componentes que se repetem */
 @import url("./global-components/base.css");
+@import url("./global-components/back-blocker.css");
 @import url("./global-components/header.css");
 @import url("./global-components/header/menu.css");
 

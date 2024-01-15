@@ -12,6 +12,7 @@ export default {
 
         this.root.style.setProperty('--scrollbar-back', 'rgb(39 39 39 / 69%)');
         this.root.style.setProperty('--products-border-color', 'rgba(131, 131, 131, 0.12)');
+        this.root.style.setProperty('--input-back-color', '#c9c9c945');
 
         this.root.style.setProperty('--model-load-back', '#1b1b1b');
         this.root.style.setProperty('--model-load-back-accent', '#5f5f5f');

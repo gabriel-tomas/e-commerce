@@ -4,7 +4,16 @@
 
 .menu-box {
     visibility: hidden;
-    position: absolute;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    background-color: var(--back-color);
+    z-index: 11;
+}
+
+.menu-box.active {
+    visibility: visible;
 }
 
 @media screen and (max-width: 744px) {

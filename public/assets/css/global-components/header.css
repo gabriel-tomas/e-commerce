@@ -21,7 +21,7 @@ header .container-search {
 }
 
 header #search-box {
-    background-color: var(--secondary);
+    background-color: var(--input-back-color);
     height: 30px;
     padding: clamp(0.8rem, 0.667rem + 0.667vw, 1.2rem);
     width: 0%;
