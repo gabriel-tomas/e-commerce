@@ -3,8 +3,8 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-// > pesquisa
-import './assets/js/search';
-
 // > header
-import './assets/js/header.js';
+import './assets/js/header/searchAnimation.js';
+import './assets/js/header/search.js';
+import './assets/js/header/changeThemeAnimation.js';
+import './assets/js/header/changeTheme.js';

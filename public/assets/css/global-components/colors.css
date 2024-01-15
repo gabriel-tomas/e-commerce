@@ -7,9 +7,15 @@
     --secondary-0-5: hsla(260, 45%, 80%, 0.276);
     --accent: #769537;
 
+    --back-color: #fff;
+    --scrollbar-back: #f1f1f1;
+
     --red-0: #BD5D4B;
     --red-1: rgb(199, 69, 69);
     --orange-0: #bd824b;
+
+    --model-load-back:#e4e4e4;
+    --model-load-back-accent:#a0a0a0;
 
     --wth-color: #fff;
     --neutral-0: rgba(228, 228, 228, 0.781);
@@ -23,8 +29,4 @@
     --neutral-8: rgba(0, 0, 0, 0.24);
     --neutral-9: rgba(182, 182, 182, 0.836);
     --neutral-10: rgba(247, 247, 247, 0.836);
-}
-
-.background-white {
-    background-color: var(--background);
 }

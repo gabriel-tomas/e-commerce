@@ -1,6 +1,6 @@
 <body>
     <%- include("./messages") %>
-    <header class="background-white">
+    <header>
         <div class="container-search">
             <button class="search-btn">
                 <span class="search-icon font-size-lg material-symbols-outlined">search</span>
@@ -13,7 +13,16 @@
                 <h1 class="font-size-lg font-wght-700">E-Commerce</h1>
             </a>
         </div>
-        <div class="container-cart">
+        <div class="container-right">
+            <button class="change-page-theme">
+                <span class="font-size-lg material-symbols-outlined">dark_mode</span>
+                <span class="text">
+                    <span class="font-size-sm">Dark mode</span>
+                    <span class="font-size-sm">
+                        <strong>OFF</strong>
+                    </span>
+                </span>
+            </button>
             <a href="/cart">
                 <span class="font-size-lg material-symbols-outlined">shopping_cart</span>
             </a>

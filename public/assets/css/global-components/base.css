@@ -11,7 +11,7 @@ html, button, input {
 }
 
 body {
-    background-color: var(--wth-color);
+    background-color: var(--back-color);
 }
 
 button, input {

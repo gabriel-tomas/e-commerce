@@ -1,10 +1,11 @@
 .model-load {
-    background: linear-gradient(-220deg, #e4e4e4, #e4e4e4,#e4e4e4, #e4e4e4, #a0a0a0, #e4e4e4, #e4e4e4, #e4e4e4, #e4e4e4);
+    background: linear-gradient(-220deg, var(--model-load-back), var(--model-load-back),var(--model-load-back), var(--model-load-back), var(--model-load-back-accent), var(--model-load-back), var(--model-load-back), var(--model-load-back), var(--model-load-back));
     background-size: 600% 600%;
     
     -webkit-animation: AnimationName 1s ease infinite;
     -moz-animation: AnimationName 1s ease infinite;
     animation: AnimationName 1s ease infinite;
+    /* rgb(27 27 27) */
 }
 
 /* product card */
