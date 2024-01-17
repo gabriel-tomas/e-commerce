@@ -21,10 +21,6 @@
     left: 0;
 }
 
-.menu-box .filled { 
-    font-variation-settings: 'FILL' 1;
-}
-
 .menu-box > .menu-header {
     margin-bottom: 2rem;
     display: flex;

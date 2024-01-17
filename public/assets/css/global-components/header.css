@@ -5,9 +5,9 @@ header.header {
     background-color: var(--background);
 }
 
-header.header > .container-title {
+/* header.header > .container-title {
     flex-basis: 60%;
-}
+} */
 
 header.header > * {
     flex-basis: 33%;
@@ -52,10 +52,23 @@ header.header > .container-right {
     gap: 2.6rem;
 }
 
-header.header .container-right > .change-page-theme {
+header.header .container-right > * {
     display: flex;
     align-items: center;
     gap: .4rem;
+}
+
+header.header .container-right > .help-settings-btn, header.header .container-right > .my-account-btn {
+    position: relative;
+}
+
+header.header .container-right > .help-settings-btn:hover::after, header.header .container-right > .my-account-btn:hover::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--black-white);
 }
 
 header.header .container-right > .change-page-theme .text {
@@ -65,6 +78,12 @@ header.header .container-right > .change-page-theme .text {
 
 header.header .container-right > .change-page-theme.active {
     font-variation-settings: 'FILL' 1;
+}
+
+@media screen and (max-width: 1175px)  {
+    header.header .container-right > * .text-info {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 744px) {
@@ -107,5 +126,8 @@ header.header .container-right > .change-page-theme.active {
         grid-row: 2;
         grid-column: 3;
     }
-    
+
+    header.header .container-right > .help-settings-btn, header.header .container-right > .my-account-btn {
+        display: none;
+    }
 }
