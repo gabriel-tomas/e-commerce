@@ -21,27 +21,35 @@
     left: 0;
 }
 
+.menu-box .filled { 
+    font-variation-settings: 'FILL' 1;
+}
+
 .menu-box > .menu-header {
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
 }
 
-.menu-box .filled { 
-    font-variation-settings: 'FILL' 1;
+.menu-box > * > .options {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 1rem;
 }
 
-.menu-box > .my-account > .options > .options-item { 
+.menu-box > * > .options > * {
+    width: fit-content;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 1rem;
+    gap: .8rem;
 }
 
 .menu-box > .menu-header > .container-account {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.333rem;
     text-align: right;
 }
 

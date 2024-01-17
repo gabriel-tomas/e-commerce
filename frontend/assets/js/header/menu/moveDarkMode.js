@@ -5,7 +5,7 @@
 
     window.matchMedia("(max-width: 744px)").addEventListener("change", (e) => {
         if(e.matches) {
-            menuHelpAndConfiguration.appendChild(darkModeBtn);
+            menuHelpAndConfiguration.insertAdjacentElement("afterbegin", darkModeBtn);
         } else {
             containerRight.insertAdjacentElement("afterbegin", darkModeBtn);
         }
