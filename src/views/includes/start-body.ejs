@@ -55,23 +55,39 @@
             </a>
         </div>
         <div class="container-right">
-            <button class="help-settings-btn">
+            <div class="dropdown-trigger help-settings">
                 <span class="material-symbols-outlined font-size-lg">info</span>
                 <span class="normal-font text-info">Help and settings</span>
-            </button>
-            <button class="my-account-btn">
+                <div class="options dropdown header left normal-font">
+                    <button class="change-page-theme">
+                        <span class="font-size-lg material-symbols-outlined">dark_mode</span>
+                        <span class="text">
+                            <span class="font-size-sm">Dark mode</span>
+                            <span class="font-size-sm">
+                                <strong class="text-status-darkmode">OFF</strong>
+                            </span>
+                        </span>
+                    </button>
+                    <button class="project-info-btn">
+                        <span class="material-symbols-outlined font-size-lg">info</span>
+                        <span class="font-size-base normal-font">Info</span>
+                    </button>
+                </div>
+            </div>
+            <div class="dropdown-trigger my-account">
                 <span class="material-symbols-outlined font-size-lg fill-icon">person</span>
                 <span class="normal-font text-info">My account</span>
-            </button>
-            <button class="change-page-theme" style="display: none;">
-                <span class="font-size-lg material-symbols-outlined">dark_mode</span>
-                <span class="text">
-                    <span class="font-size-sm">Dark mode</span>
-                    <span class="font-size-sm">
-                        <strong class="text-status-darkmode">OFF</strong>
-                    </span>
-                </span>
-            </button>
+                <div class="options dropdown header right normal-font">
+                    <a class="options-item" href="#">
+                        <span class="material-symbols-outlined fill-icon font-size-lg">person</span>
+                        <span class="font-size-base">My data</span>
+                    </a>
+                    <a class="options-item" href="#">
+                        <span class="material-symbols-outlined fill-icon font-size-lg">favorite</span>
+                        <span class="font-size-base">Favorites</span>
+                    </a>
+                </div>
+            </div>
             <a href="/cart">
                 <span class="font-size-lg material-symbols-outlined">shopping_cart</span>
             </a>

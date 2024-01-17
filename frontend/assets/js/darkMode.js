@@ -35,6 +35,9 @@ export default {
         this.root.style.setProperty('--accent', '#769537');
 
         this.root.style.setProperty('--scrollbar-back', '#f1f1f1');
+        this.root.style.setProperty('--products-border-color', '#ede9f7');
+        this.root.style.setProperty('--input-back-color', '#c4b5e3');
+        this.root.style.setProperty('--black-white', '#000');
 
         this.root.style.setProperty('--model-load-back', '#e4e4e4');
         this.root.style.setProperty('--model-load-back-accent', '#a0a0a0');
@@ -42,5 +45,7 @@ export default {
         this.root.style.setProperty('--neutral-0', 'rgba(228, 228, 228, 0.781)');
         this.root.style.setProperty('--neutral-3', 'rgba(255, 255, 255, 0.733)');
         this.root.style.setProperty('--neutral-4', 'rgb(233, 233, 233)');
+        this.root.style.setProperty('--neutral-9', 'rgba(182, 182, 182, 0.836)');
+        this.root.style.setProperty('--neutral-10', 'rgba(247, 247, 247, 0.836)');
     }
 }

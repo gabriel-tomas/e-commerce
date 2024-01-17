@@ -10,5 +10,8 @@ import './assets/js/header/changeTheme.js';
 import './assets/js/header/menu/moveDarkMode.js';
 import './assets/js/header/menu/toggleMenu.js';
 
+// > dropdown
+import './assets/js/dropDown.js';
+
 // > initial check
 import './assets/js/initialCheck.js';
