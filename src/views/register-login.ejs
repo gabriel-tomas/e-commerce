@@ -33,22 +33,25 @@
             </div>
         <% } else {%>
             <div class="container-register-login-title">
-                <h1>Login</h1>
+                <h1 class="font-size-lg">Login</h1>
             </div>
-            <form action="/login" method="post">
+            <form class="form font-size-base" action="/login" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <div>
-                    <label for="userEmail">E-mail</label>
-                    <input type="text" name="email" id="userEmail">
+                <div class="container-input">
+                    <label class="label-placeholder normal-font" for="userEmail">E-mail</label>
+                    <input class="input normal-font" type="text" name="email" id="userEmail">
+                </div>
+                <div class="container-input">
+                    <label class="label-placeholder normal-font" for="userPassword">Password</label>
+                    <input class="input normal-font" type="text" name="password" id="userPassword">
                 </div>
                 <div>
-                    <label for="userPassword">Password</label>
-                    <input type="text" name="password" id="userPassword">
-                </div>
-                <div>
-                    <button type="submit">Login</button>
+                    <button class="submit-form font-wght-700" type="submit">Login</button>
                 </div>
             </form>
+            <div class="container-alternative">
+                <p class="font-size-base">New user? <a href="/register" class="accent">Sign up</a></p>
+            </div>
         <% } %>
     </section>
 <%- include("./includes/footer") %>

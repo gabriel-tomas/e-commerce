@@ -12,14 +12,12 @@ exports.create = async (req, res) => {
         await register.create();
         if(register.errors.length > 0)  {
             req.flash("errors", register.errors);
-            console.log(register.errors);
             req.session.save(() => {
                 res.redirect("/register");
             });
         } else {
             req.flash("success", "User created successfully!");
             req.session.user = register.user;
-            console.log(req.session.user);
             req.session.save(() => {
                 res.redirect("/");
             });

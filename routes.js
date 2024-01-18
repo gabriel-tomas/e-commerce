@@ -35,6 +35,7 @@ route.post("/register", /* checkLogin, */ register.create);
 
 // Rotas login
 route.get("/login", /* checkLogin, */ login.index);
+route.post("/login", /* checkLogin, */ login.login);
 
 
 module.exports = route;

@@ -75,10 +75,17 @@
                 </div>
             </div>
             <div class="dropdown-trigger my-account">
-                <a href="/register">
-                    <span class="material-symbols-outlined font-size-lg fill-icon">person</span>
-                    <span class="normal-font text-info">Login/Sign up</span>
-                </a>
+                <% if(user) {%>
+                    <a href="#">
+                        <span class="material-symbols-outlined font-size-lg fill-icon">person</span>
+                        <span class="normal-font text-info"><%= user.name %></span>
+                    </a>
+                <% } else { %>
+                    <a href="/register">
+                        <span class="material-symbols-outlined font-size-lg fill-icon">person</span>
+                        <span class="normal-font text-info">Login/Sign up</span>
+                    </a>
+                <% } %>
                 <div class="options dropdown header right normal-font">
                     <a class="options-item" href="#">
                         <span class="material-symbols-outlined fill-icon font-size-md">person</span>
