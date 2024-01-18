@@ -28,6 +28,15 @@
     transform: translateY(-35%);
     left: 20px;
     transition: .1s top;
+    color: var(--neutral-12);
+}
+
+.label-placeholder:hover {
+    cursor: text;
+}
+
+.label-placeholder.active {
+    top: 0px;
 }
 
 .input {
@@ -38,9 +47,6 @@
     margin-top: .5rem;
 }
 
-.label-placeholder.active {
-    top: 0px;
-}
 
 .submit-form {
     background-color: var(--primary);
