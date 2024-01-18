@@ -2,7 +2,54 @@
 <%- include("./includes/end-head/end-head-product") %>
 <%- include("./includes/start-body") %>
     <section class="register-login space-sides max-width-section-align space-top">
-        
+        <% if(route === "register") {%>
+            <div class="container-register-login-title">
+                <h1 class="font-size-lg">Sign up</h1>
+            </div>
+            <form class="font-size-base" action="/register" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div>
+                    <label for="userName">Name</label>
+                    <input type="text" name="name" id="userName">
+                </div>
+                <div>
+                    <label for="userSurName">Surname</label>
+                    <input type="text" name="surname" id="userSurName">
+                </div>
+                <div>
+                    <label for="userEmail">E-mail</label>
+                    <input type="text" name="email" id="userEmail">
+                </div>
+                <div>
+                    <label for="userPassword">Password</label>
+                    <input type="text" name="password" id="userPassword">
+                </div>
+                <div>
+                    <button type="submit">Create Account</button>
+                </div>
+            </form>
+            <div class="container-alternative">
+                <p class="font-size-base">Already a customer? <a href="/login">Login</a></p>
+            </div>
+        <% } else {%>
+            <div class="container-register-login-title">
+                <h1>Login</h1>
+            </div>
+            <form action="/login" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div>
+                    <label for="userEmail">E-mail</label>
+                    <input type="text" name="email" id="userEmail">
+                </div>
+                <div>
+                    <label for="userPassword">Password</label>
+                    <input type="text" name="password" id="userPassword">
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        <% } %>
     </section>
 <%- include("./includes/footer") %>
 </body>
