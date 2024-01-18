@@ -8,6 +8,7 @@ const category = require("./src/controllers/category");
 const forYou = require("./src/controllers/forYou");
 const register = require("./src/controllers/register");
 const login = require("./src/controllers/login");
+const checkLogin = require("./src/middlewares/checkLogin");
 
 
 // Rotas home
@@ -29,10 +30,11 @@ route.get("/category", category.index);
 route.get("/foryou", forYou.index);
 
 // Rotas register
-route.get("/register", register.index);
+route.get("/register", /* checkLogin, */ register.index);
+route.post("/register", /* checkLogin, */ register.create);
 
 // Rotas login
-route.get("/login", login.index);
+route.get("/login", /* checkLogin, */ login.index);
 
 
 module.exports = route;
