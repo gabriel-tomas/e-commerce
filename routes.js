@@ -6,6 +6,7 @@ const products = require("./src/controllers/products");
 const product = require("./src/controllers/product");
 const category = require("./src/controllers/category");
 const forYou = require("./src/controllers/forYou");
+const register = require("./src/controllers/register");
 
 
 // Rotas home
@@ -25,6 +26,9 @@ route.get("/category", category.index);
 
 // Rotas forYou
 route.get("/foryou", forYou.index);
+
+// Rotas register
+route.get("/register", register.index);
 
 
 module.exports = route;
