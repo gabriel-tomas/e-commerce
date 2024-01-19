@@ -10,6 +10,7 @@ const register = require("./src/controllers/register");
 const login = require("./src/controllers/login");
 const logout = require("./src/controllers/logout");
 const loginCheck = require("./src/middlewares/loginCheck");
+const favorites = require("./src/controllers/favorites");
 
 
 // Rotas home
@@ -40,6 +41,9 @@ route.post("/login", loginCheck.checkLogin, login.login);
 
 // Rotas logout
 route.get("/logout", loginCheck.loginRequired, logout.logout);
+
+// Rotas favorites
+route.get("/favorites", /* loginCheck.loginRequired, */ favorites.index);
 
 
 module.exports = route;

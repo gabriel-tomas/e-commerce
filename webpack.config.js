@@ -10,6 +10,7 @@ module.exports = {
         productsForYou: './frontend/productsForYou.js',
         product: './frontend/product.js',
         registerLogin: './frontend/registerLogin',
+        favorites: './frontend/favorites',
     },
     output: {
         path: path.resolve(__dirname, 'public', 'assets', 'js'),
