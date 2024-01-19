@@ -15,3 +15,6 @@ import './assets/js/dropDown.js';
 
 // > initial check
 import './assets/js/initialCheck.js';
+
+// > messages 
+import './assets/js/messages.js'

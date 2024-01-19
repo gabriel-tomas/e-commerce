@@ -30,7 +30,11 @@ class RegisterModel {
             return;
         }
 
-        await FavoritesModel.create({ id_reference: this.user._id });
+        const favorites = await FavoritesModel.findOne({ id_reference: this.user._id });
+
+        if(!favorites) {
+            await FavoritesModel.create({ id_reference: this.user._id });
+        }
     }
 
     async userExists() {

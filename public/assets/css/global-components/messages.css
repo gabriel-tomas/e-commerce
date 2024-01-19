@@ -16,6 +16,10 @@
     font-family: var(--title-font);
 }
 
+.message > p.normal-font {
+    font-family: var(--normal-font);
+}
+
 .message > .counter-added {
     display: none;
     position: absolute;
@@ -28,7 +32,15 @@
     background-color: var(--accent);
 }
 
-.message.danger {
+.message > ul {
+    padding-left: 2rem;
+}
+
+.message > ul > li + li {
+    margin-top: .3rem;
+}
+
+.message.error {
     background-color: var(--red-0);
 }
 
@@ -38,6 +50,16 @@
 
 .message.active {
     animation: opacityMessage 4s;
+}
+
+.message.important.active {
+    animation: opacityMessage 6.5s;
+}
+
+.close-message {
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 @keyframes opacityMessage {

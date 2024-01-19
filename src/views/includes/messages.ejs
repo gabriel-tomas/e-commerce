@@ -1,4 +1,38 @@
-<div class="message text font-size-base">
-    <span class="counter-added"></span>
-    <p class="">...</p>
-</div>
+<% if(success.length !== 0) { %>
+    <div class="message text font-size-base important active success">
+        <span class="counter-added"></span>
+        <button class="close-message">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <% if(success.length === 1)  {%>
+            <p class="font-size-base normal-font"><%= success %></p>
+        <% } else { %>
+            <ul>
+                <% success.forEach(value => {%>
+                    <li class="font-size-base normal-font"><%= value %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+<% } else if(errors.length !== 0) { %>
+    <div class="message text font-size-base important active error">
+        <span class="counter-added"></span>
+        <button class="close-message">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <% if(errors.length === 1)  {%>
+            <p class="font-size-base normal-font"><%= errors %></p>
+        <% } else { %>
+            <ul>
+                <% errors.forEach(value => {%>
+                    <li class="font-size-base normal-font"><%= value %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+<% } else { %>
+    <div class="message text font-size-base">
+        <span class="counter-added"></span>
+        <p class="">...</p>
+    </div>
+<% } %>

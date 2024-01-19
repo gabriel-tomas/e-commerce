@@ -12,13 +12,11 @@ exports.login = async (req, res) => {
         await login.login();
         if(login.errors.length > 0) {
             req.flash("errors", login.errors);
-            console.log(req.flash("errors"));
             req.session.save(() => {
                 res.redirect("/login");
             });
         } else {
             req.flash("success", "Logged in successfully");
-            console.log(req.flash("success"));
             req.session.user = login.user;
             req.session.save(() => {
                 res.redirect("/");
