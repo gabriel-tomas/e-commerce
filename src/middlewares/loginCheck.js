@@ -17,7 +17,7 @@ exports.loginRequired = (req, res, next) => {
             "Login required"
         ]);
         req.session.save(() => {
-            res.redirect("/");
+            res.redirect("/register");
         });
         return;
     }

@@ -7,12 +7,21 @@
             </button>
             <div class="menu-box">
                 <header class="menu-header">
-                    <a class="container-account" href="/register">
-                        <span class="material-symbols-outlined font-size-xxl fill-icon">account_circle</span>
-                        <div>
-                            <p class="font-size-base">login or sign up</p>
-                        </div>
-                    </a>
+                    <% if(user) { %>
+                        <a class="container-account" href="#">
+                            <span class="material-symbols-outlined font-size-xxl fill-icon">account_circle</span>
+                            <div>
+                                <p class="font-size-base"><%= user.name %></p>
+                            </div>
+                        </a>
+                    <% } else { %>
+                        <a class="container-account" href="/register">
+                            <span class="material-symbols-outlined font-size-xxl fill-icon">account_circle</span>
+                            <div>
+                                <p class="font-size-base">login or sign up</p>
+                            </div>
+                        </a>
+                    <% } %>
                 </header>
                 <section class="my-account">
                     <div class="container-title">

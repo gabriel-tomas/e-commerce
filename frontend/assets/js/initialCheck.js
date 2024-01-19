@@ -19,6 +19,11 @@ import changeThemeBtnStatus from "./header/changeThemeBtnStatus";
         const darkModeBtn = document.querySelector(".change-page-theme");
         if(window.matchMedia("(max-width: 744px)").matches) {
             menuHelpAndConfiguration.insertAdjacentElement("afterbegin", darkModeBtn);
+            darkModeBtn.querySelector("span").classList.remove("font-size-md");
+            darkModeBtn.querySelector("span").classList.add("font-size-lg");
+        } else {
+            darkModeBtn.querySelector("span").classList.add("font-size-md");
+            darkModeBtn.querySelector("span").classList.remove("font-size-lg");
         }
     }
     checkMenu();
