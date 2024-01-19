@@ -36,6 +36,12 @@
                             <span class="material-symbols-outlined fill-icon font-size-lg">favorite</span>
                             <span class="font-size-base">Favorites</span>
                         </a>
+                        <% if(user) { %>
+                            <a class="options-item" href="/logout">
+                                <span class="material-symbols-outlined fill-icon font-size-md">logout</span>
+                                <span class="font-size-base">Logout</span>
+                            </a>
+                        <% } %>
                     </div>
                 </section>
                 <section class="help-configs space-top-3">
