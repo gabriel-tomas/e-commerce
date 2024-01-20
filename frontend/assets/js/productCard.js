@@ -43,15 +43,43 @@ export default class ProductCard {
         const parent = document.createElement("div")
         parent.classList.add("container-cart-favorite");
 
+        const favorites = localStorageGet("favorites");
+
         const link = document.createElement("a");
         link.classList.add("btn-add-to-favorite");
 
         const spanLink = document.createElement("span");
         spanLink.classList.add("material-symbols-outlined", "font-size-md");
         spanLink.innerText = "favorite";
-        link.setAttribute("href", `/favorites/${this.id}`);
-
+        
         link.appendChild(spanLink);
+
+        if(favorites) {
+            const arrayFavorites = favorites.split(",")
+            console.log(arrayFavorites);
+            if(favorites.indexOf(String(this.id)) !== -1) {
+                spanLink.classList.add("fill-icon");
+                link.addEventListener("click", () => {
+                    const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
+                    deleteCartItemLclStrg("favorites");
+                    link.setAttribute("href", `/favorites/remove/${this.id}`);
+                });
+            } else {
+                link.addEventListener("click", () => {
+                    const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
+                    addCartItemLclStrg("favorites");
+                    spanLink.classList.add("fill-icon");
+                    link.setAttribute("href", `/favorites/${this.id}`);
+                });
+            }
+        } else {
+            link.addEventListener("click", () => {
+                const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
+                addCartItemLclStrg("favorites");
+                spanLink.classList.add("fill-icon");
+                link.setAttribute("href", `/favorites/${this.id}`);
+            });
+        }
 
         const btn = document.createElement("button");
         btn.classList.add("btn-add-to-cart");
@@ -64,7 +92,7 @@ export default class ProductCard {
 
         btn.addEventListener("click", () => {
             const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
-            addCartItemLclStrg();
+            addCartItemLclStrg("cart-items");
             messages("success", checkLanguage() === "ptBr"? "Produto adicionado com sucesso ao carrinho" : "Product successfully added to cart");
         });
 
@@ -74,21 +102,21 @@ export default class ProductCard {
         return parent;
     }
 
-    static addCartItemLclStrg() {
+    static addCartItemLclStrg(key) {
         let oldValue;
-        oldValue = localStorageGet("cart-items");
+        oldValue = localStorageGet(key);
 
         if(oldValue === null) {
-            localStorageSave("cart-items", String(this.id));
+            localStorageSave(key, String(this.id));
             return;
         };
 
-        localStorageSave("cart-items", `${oldValue}, ${this.id}`);
+        localStorageSave(key, `${oldValue}, ${this.id}`);
     }
 
-    static deleteCartItemLclStrg(deleteAll=false) {
+    static deleteCartItemLclStrg(key, deleteAll=false) {
         let oldValue;
-        oldValue = localStorageGet("cart-items");
+        oldValue = localStorageGet(key);
         oldValue = String(oldValue);
         if(oldValue === null) return;
 
@@ -108,9 +136,9 @@ export default class ProductCard {
         oldValue = oldValue.join(", ");
 
         if(!oldValue) {
-            localStorageRemove("cart-items");
+            localStorageRemove(key);
         } else {
-            localStorageSave("cart-items", `${oldValue}`);
+            localStorageSave(key, `${oldValue}`);
         }
     }
 

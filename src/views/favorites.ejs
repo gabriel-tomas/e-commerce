@@ -26,7 +26,7 @@
                                 <p class="newer-price font-size-base">$ <%= product.price %> <span class="font-size-sm"><%= product.discountPercentage %>% OFF</span></p>
                             </div>
                             <div class="container-add-remove-cart-favorite">
-                                <a class="btn-remove-favorite" href="/favorites/remove/<%= product.id %>">
+                                <a class="btn-remove-favorite" href="/favorites/remove/<%= product.id %>" removeid="<%= product.id %>">
                                     <span class="material-symbols-outlined font-size-md fill-icon">favorite</span>
                                 </a>
                                 <button class="btn-add-to-cart favorites">
