@@ -43,7 +43,7 @@ export default class ProductCard {
         const parent = document.createElement("div")
         parent.classList.add("container-cart-favorite");
 
-        const favorites = localStorageGet("favorites");
+        const itemsFavorite = localStorageGet("favorites");
 
         const link = document.createElement("a");
         link.classList.add("btn-add-to-favorite");
@@ -54,31 +54,21 @@ export default class ProductCard {
         
         link.appendChild(spanLink);
 
-        if(favorites) {
-            const arrayFavorites = favorites.split(",")
-            console.log(arrayFavorites);
-            if(favorites.indexOf(String(this.id)) !== -1) {
+        if(itemsFavorite) {
+            if(itemsFavorite.indexOf(String(this.id)) !== -1) {
                 spanLink.classList.add("fill-icon");
-                link.addEventListener("click", () => {
-                    const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
-                    deleteCartItemLclStrg("favorites");
-                    link.setAttribute("href", `/favorites/remove/${this.id}`);
-                });
+                link.setAttribute("href", `/favorites/remove/${this.id}`);
             } else {
                 link.addEventListener("click", () => {
-                    const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
-                    addCartItemLclStrg("favorites");
                     spanLink.classList.add("fill-icon");
-                    link.setAttribute("href", `/favorites/${this.id}`);
                 });
+                link.setAttribute("href", `/favorites/${this.id}`);
             }
         } else {
             link.addEventListener("click", () => {
-                const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
-                addCartItemLclStrg("favorites");
                 spanLink.classList.add("fill-icon");
-                link.setAttribute("href", `/favorites/${this.id}`);
             });
+            link.setAttribute("href", `/favorites/${this.id}`);
         }
 
         const btn = document.createElement("button");

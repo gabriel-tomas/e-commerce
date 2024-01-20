@@ -1,3 +1,10 @@
     <script src="/assets/js/home.js"></script>
+    <span class="favorites-items-span" items="<%= linksToChange %>"></span>
+    <script>
+        const items = document.querySelector(".favorites-items-span").getAttribute("items").split(",");
+        value = JSON.stringify(items);
+        localStorage.setItem("favorites", value);
+        document.querySelector(".favorites-items-span").remove();
+    </script>
 </body>
 </html>

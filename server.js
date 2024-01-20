@@ -19,6 +19,7 @@ const path = require("path");
 const csrf = require("csurf");
 const {middlewareGlobal, checkCsrfError, csrfMiddleware} = require("./src/middlewares/middleware");
 const {globalLanguages} = require("./src/middlewares/globalLanguage");
+const {getFavorites} = require("./src/middlewares/getFavoritesAdded");
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -47,6 +48,7 @@ app.use(middlewareGlobal);
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(globalLanguages);
+app.use(getFavorites);
 app.use(routes);
 
 app.on('ready', () => {

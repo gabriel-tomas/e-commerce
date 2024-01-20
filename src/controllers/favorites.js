@@ -13,12 +13,16 @@ exports.index = async (req, res) => {
     }
     
     const idUser = req.session.user._id;
-
-    const favorite = new Favorite(idUser, null, language);
-    const productsToAdd = await favorite.getItems();
-
-    res.locals.products = productsToAdd;
-    res.render("favorites");
+    
+    try {
+        const favorite = new Favorite(idUser, null, language);
+        const productsToAdd = await favorite.getItems();
+    
+        res.locals.products = productsToAdd;
+        res.render("favorites");
+    } catch(e) {
+        console.log(e);
+    }
 }
 
 exports.create = async (req, res) => {
