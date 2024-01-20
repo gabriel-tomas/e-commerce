@@ -45,6 +45,7 @@ route.get("/logout", loginCheck.loginRequired, logout.logout);
 
 // Rotas favorites
 route.get("/favorites", /* loginCheck.loginRequired, */ favorites.index);
+route.get("/favorites/:id", /* loginCheck.loginRequired, */ favorites.create);
 
 // Rotas languages
 route.get("/language", /* loginCheck.loginRequired, */ language.changeLanguage);

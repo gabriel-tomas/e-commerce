@@ -7,7 +7,7 @@ const FavoriteSchema = require("./schemas/FavoriteSchema");
 const UserModel = mongoose.model('Users', UserSchema);
 const FavoritesModel = mongoose.model('Favorites', FavoriteSchema);
 
-class RegisterModel {
+class Login {
     constructor(body, errorLang) {
         this.body = body;
         this.errors = [];
@@ -67,4 +67,4 @@ class RegisterModel {
     }
 }
 
-module.exports = RegisterModel;
+module.exports = Login;

@@ -1,4 +1,4 @@
-const LoginModel = require("../models/LoginModel");
+const Login = require("../models/LoginModel");
 
 exports.index = (req, res) => {
     res.render("register-login", {
@@ -19,7 +19,7 @@ exports.login = async (req, res) => {
     }
 
     try {
-        const login = new LoginModel(req.body, language);
+        const login = new Login(req.body, language);
         await login.login();
         if(login.errors.length > 0) {
             req.flash("errors", login.errors);
