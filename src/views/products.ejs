@@ -2,41 +2,41 @@
 <%- include("./includes/end-head/end-head-products") %>
 <%- include("./includes/start-body") %>
     <div class="results-search space-sides max-width-section-align space-top-3">
-        <p class="results-p normal-font font-size-md"><span class="quantity-products">0</span> results for "<span class="search-word"></span>"</p>
+        <p class="results-p normal-font font-size-md"><span class="quantity-products">0</span> <%= language.resultsSearch %> "<span class="search-word"></span>"</p>
     </div>
     <div class="filter-options space-sides max-width-section-align space-top">
         <select class="button order normal-font font-size-base">
-            <option selected disabled value="disabled">Order by</option>
-            <option value="lower">Lowest price</option>
-            <option value="bigger">Biggest price</option>
+            <option selected disabled value="disabled"><%= language.filterOrder.option1 %></option>
+            <option value="lower"><%= language.filterOrder.option2 %></option>
+            <option value="bigger"><%= language.filterOrder.option3 %></option>
         </select>
         <button class="button filter font-size-base">
-            <span>Filter</span>
+            <span><%= language.filterAditionals.value %></span>
             <span class="material-symbols-outlined font-size-md">tune</span>
         </button>
         <div class="filter-additional-box">
             <div class="container-price">
                 <div>
                     <label for="min-price">
-                        <h1 class="font-size-base">Min price</h1>
+                        <h1 class="font-size-base"><%= language.filterAditionals.minPrice %></h1>
                     </label>
-                    <input class="input-price font-size-base gap-top-0-65" type="number" id="min-price" placeholder="Min price">
+                    <input class="input-price font-size-base gap-top-0-65" type="number" id="min-price" placeholder="<%= language.filterAditionals.minPrice %>">
                 </div>
                 <div>
                     <label for="max-price">
-                        <h1 class="font-size-base">Max price</h1>
+                        <h1 class="font-size-base"><%= language.filterAditionals.maxPrice %></h1>
                     </label>
-                    <input class="input-price font-size-base gap-top-0-65" type="number" id="max-price" placeholder="Max price">
+                    <input class="input-price font-size-base gap-top-0-65" type="number" id="max-price" placeholder="<%= language.filterAditionals.maxPrice %>">
                 </div>
             </div>
             <div class="container-category gap-top-0-86">
-                <h1 class="font-size-base">Category:</h1>
+                <h1 class="font-size-base"><%= language.filterAditionals.category %>:</h1>
                 <div class="container-options-category">
                     
                 </div>
             </div>
             <div class="container-apply gap-top-1-2">
-                <button class="button apply-filters">Aplicar</button>
+                <button class="button apply-filters"><%= language.filterAditionals.applyBtn %></button>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
         </div>
     </section>
     <div class="container-load-more-products space-sides max-width-section-align space-top">
-        <button class="load-products font-wght-500 font-size-base">Load more products</button>
+        <button class="load-products font-wght-500 font-size-base"><%= language.loadMore %></button>
     </div>
 <%- include("./includes/footer") %>
 <% if(forYou) { %>

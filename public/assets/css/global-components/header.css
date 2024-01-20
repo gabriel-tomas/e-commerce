@@ -62,6 +62,33 @@ header.header .container-right > .help-settings, header.header .container-right 
     position: relative;
 }
 
+.dropdown-trigger-click.inside {
+    flex-direction: column;
+}
+
+.dropdown-trigger-click.inside > .container-text-icon {
+    display: flex;
+    width: 100%;
+    gap: 0.8rem;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.dropdown-trigger-click.active > .container-text-icon::after  {
+    content: "";
+    width: 95%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--black-white);
+}
+
+.change-language-btn-pt-en {
+    cursor: pointer;
+}
+
 .dropdown.options {
     visibility: hidden;
     position: absolute;
@@ -79,6 +106,21 @@ header.header .container-right > .help-settings, header.header .container-right 
     z-index: -999;
 }
 
+.dropdown.options > .options-item > .text {
+    white-space: nowrap;
+}
+
+.dropdown-click.inside {
+    display: none;
+    width: fit-content;
+    flex-direction: column;
+    z-index: 10;
+    gap: 1rem;
+    border-radius: 10px;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
 .dropdown.options::before {
     content: "";
     position: absolute;
@@ -86,6 +128,10 @@ header.header .container-right > .help-settings, header.header .container-right 
     left: 0;
     height: 3.5px;
     width: 100%;
+}
+
+.dropdown-click.inside.active {
+    display: flex;
 }
 
 .dropdown.options.active {

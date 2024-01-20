@@ -8,10 +8,15 @@ const UserModel = mongoose.model('Users', UserSchema);
 const FavoritesModel = mongoose.model('Favorites', FavoriteSchema);
 
 class RegisterModel {
-    constructor(body) {
+    constructor(body, errorLang) {
         this.body = body;
         this.errors = [];
         this.user = null;
+        this.errorLang = errorLang;
+    }
+
+    defErrorLang(ptBrLangMessage, enLang2Message) {
+        return this.errorLang === "ptBr"? ptBrLangMessage : enLang2Message;
     }
 
     async login() {
@@ -21,11 +26,11 @@ class RegisterModel {
         this.user = await UserModel.findOne({email: this.body.email});
 
         if(!this.user) {
-            this.errors.push("User does not exist");
+            this.errors.push(this.defErrorLang("Usuário não existe", "User does not exist"));
             return;
         }
         if(!bcryptjs.compareSync(this.body.password, this.user.password)) {
-            this.errors.push("Incorrect or invalid password");
+            this.errors.push(this.defErrorLang("Senha incorreta ou inválida", "Incorrect or invalid password"));
             this.user = null;
             return;
         }
@@ -38,14 +43,14 @@ class RegisterModel {
     }
 
     async userExists() {
-        if(this.user) this.errors.push("User already exists");
+        if(this.user) this.errors.push(this.defErrorLang("Usuário já existe", "User already exists"));
     }
 
     valid() {
         this.cleanUp();
 
-        if(!validator.isEmail(this.body.email)) this.errors.push("Inválid e-mail");
-        if(this.body.password.length < 8 || this.body.password.length > 24) this.errors.push("Password must contain between 8 and 32 characters");
+        if(!validator.isEmail(this.body.email)) this.errors.push(this.defErrorLang("E-mail inválido", "Invalid e-mail"));
+        if(this.body.password.length < 8 || this.body.password.length > 24) this.errors.push(this.defErrorLang("Senha deve conter entre 8 e 32 caracteres", "Password must contain between 8 and 32 characters"));
     }
 
     cleanUp() {

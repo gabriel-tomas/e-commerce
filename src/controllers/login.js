@@ -7,8 +7,19 @@ exports.index = (req, res) => {
 };
 
 exports.login = async (req, res) => {
+    let language;
+    if(req.session.lang) {
+        if(req.session.lang === "ptBr") {
+            language = "ptBr";
+        } else if(req.session.lang === "en") {
+            language = "en";
+        }
+    } else {
+        language =  "en";
+    }
+
     try {
-        const login = new LoginModel(req.body);
+        const login = new LoginModel(req.body, language);
         await login.login();
         if(login.errors.length > 0) {
             req.flash("errors", login.errors);
@@ -16,7 +27,7 @@ exports.login = async (req, res) => {
                 res.redirect("/login");
             });
         } else {
-            req.flash("success", "Logged in successfully");
+            req.flash("success", language === "ptBr"? "Logado com sucesso" : "Logged in successfully");
             req.session.user = login.user;
             req.session.save(() => {
                 res.redirect("/");

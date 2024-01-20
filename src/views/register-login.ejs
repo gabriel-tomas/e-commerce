@@ -4,16 +4,16 @@
     <section class="register-login space-sides max-width-section-align space-top">
         <% if(route === "register") {%>
             <div class="container-register-login-title">
-                <h1 class="font-size-lg">Sign up</h1>
+                <h1 class="font-size-lg"><%= language.registerTitle %></h1>
             </div>
             <form class="form font-size-base" action="/register" method="post">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="container-input">
-                    <label class="label-placeholder normal-font" for="userName">Name</label>
+                    <label class="label-placeholder normal-font" for="userName"><%= language.form.name %></label>
                     <input class="input normal-font" type="text" name="name" id="userName">
                 </div>
                 <div class="container-input">
-                    <label class="label-placeholder normal-font" for="userSurName">Surname</label>
+                    <label class="label-placeholder normal-font" for="userSurName"><%= language.form.surname %></label>
                     <input class="input normal-font" type="text" name="surname" id="userSurName">
                 </div>
                 <div class="container-input">
@@ -21,15 +21,15 @@
                     <input class="input normal-font" type="text" name="email" id="userEmail">
                 </div>
                 <div class="container-input">
-                    <label class="label-placeholder normal-font" for="userPassword">Password</label>
+                    <label class="label-placeholder normal-font" for="userPassword"><%= language.form.password %></label>
                     <input class="input normal-font" type="text" name="password" id="userPassword">
                 </div>
                 <div>
-                    <button class="submit-form font-wght-700" type="submit">Create Account</button>
+                    <button class="submit-form font-wght-700" type="submit"><%= language.form.btnSubmitSignUp %></button>
                 </div>
             </form>
             <div class="container-alternative">
-                <p class="font-size-base">Already a customer? <a href="/login" class="accent">Login</a></p>
+                <p class="font-size-base"><%= language.alternative.valueLogin %> <a href="/login" class="accent">Login</a></p>
             </div>
         <% } else {%>
             <div class="container-register-login-title">
@@ -42,15 +42,15 @@
                     <input class="input normal-font" type="text" name="email" id="userEmail">
                 </div>
                 <div class="container-input">
-                    <label class="label-placeholder normal-font" for="userPassword">Password</label>
+                    <label class="label-placeholder normal-font" for="userPassword"><%= language.form.password %></label>
                     <input class="input normal-font" type="text" name="password" id="userPassword">
                 </div>
                 <div>
-                    <button class="submit-form font-wght-700" type="submit">Login</button>
+                    <button class="submit-form font-wght-700" type="submit"><%= language.form.btnSubmitLogin %></button>
                 </div>
             </form>
             <div class="container-alternative">
-                <p class="font-size-base">New user? <a href="/register" class="accent">Sign up</a></p>
+                <p class="font-size-base"><%= language.alternative.valueSignUp %> <a href="/register" class="accent"><%= language.alternative.linkValueSignUp %></a></p>
             </div>
         <% } %>
     </section>

@@ -3,7 +3,7 @@
 <%- include("./includes/start-body") %>
     <section class="cart space-sides max-width-section-align space-top">
         <div class="container-title">
-            <h1 class="font-wght-700 font-size-md">My cart</h1>
+            <h1 class="font-wght-700 font-size-md"><%= language.titleCart %></h1>
         </div>
         <section class="items-cart">
             <div class="item-cart product-cart-model-load model-load model-load-item-cart"><table class="table-product"><tr class="row-headers"><th class="font-size-sm font-wght-700"></th><th class="font-size-sm font-wght-700"></th><th class="font-size-sm font-wght-700"></th></tr><tr class="row-datas"><td class="td-product"><div class="divImg model-load"></div><div class="div-title model-load"><h3 class="font-normal font-size-base font-wght-700"></h3></div><div class="div-brand model-load"><span class="font-normal font-size-base"></span></div></td><td class="td-quantity"></td><td class="td-price"><p class="p-divided font-size-base model-load"></p><p class="p-total font-size-base model-load"></p></td></tr></table></div>
@@ -12,7 +12,7 @@
         <section class="right-card">
             <section class="container-summary right-card-defaults">
                 <div class="container-title">
-                    <h2 class="font-wght-700 font-size-md">Summary</h2>
+                    <h2 class="font-wght-700 font-size-md"><%= language.summary.value %></h2>
                 </div>
                 <div class="total-price">
                     <h3 class="font-size-md font-wght-400">Total</h3>
@@ -20,33 +20,31 @@
                 </div>
                 <div class="other-payments">
                     <div class="container-incash font-wght-600">
-                        <h4 class="font-wght-400 font-size-sm">in cash</h4>
+                        <h4 class="font-wght-400 font-size-sm"><%= language.summary.otherPayments.inCash.value %></h4>
                         <span class="price-incash font-size-md">$ 0,00</span>
-                        <p class="font-wght-400 font-size-sm">with 15% discount</p>
+                        <p class="font-wght-400 font-size-sm"><%= language.summary.otherPayments.inCash.textInfo %></p>
                     </div>
                     <div class="container-card">
                         <span class="price-card font-size-base font-wght-500">$ 0,00</span>
-                        <p class="p-info font-size-sm">in up to 12x of <span class="divided12 font-wght-600">0,00</span><br> no interest on the card</p>
+                        <p class="p-info font-size-sm"><%= language.summary.otherPayments.inCard.text1 %> <span class="divided12 font-wght-600">0,00</span><br> <%= language.summary.otherPayments.inCard.text2 %></p>
                     </div>
                 </div>
-                <button class="btn-finalize-order font-wght-700 font-size-base">Finalize order</button>
+                <button class="btn-finalize-order font-wght-700 font-size-base"><%= language.summary.finalizeBtn %></button>
             </section>
             <section class="container-shipping right-card-defaults">
                 <div class="container-title">
-                    <h2 class="font-wght-700 font-size-base">Shipping and delivery</h2>
+                    <h2 class="font-wght-700 font-size-base"><%= language.titleShippingDelivery %></h2>
                 </div>
                 <div class="container-zip-code">
                     <form action="" class="form-zip-code">
-                        <input class="input-zip-code" type="text" placeholder="Zip code">
-                        <button class="submit-zip-code font-size-base font-wght-700" type="submit">
-                            Calc...
-                        </button>
+                        <input class="input-zip-code" type="text" placeholder="<%= language.formShippingDelivery.zipCode %>">
+                        <button class="submit-zip-code font-size-base font-wght-700" type="submit">Calc...</button>
                     </form>
                 </div>
             </section>
             <button class="clean-cart font-wght-500 font-size-base">
                 <span class="material-symbols-outlined font-wght-300 font-size-md">delete_forever</span>
-                Clean cart
+                <%= language.cleanCart %>
             </button>
         </section>
     </section>

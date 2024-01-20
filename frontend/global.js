@@ -9,6 +9,7 @@ import './assets/js/header/search.js';
 import './assets/js/header/changeTheme.js';
 import './assets/js/header/menu/moveDarkMode.js';
 import './assets/js/header/menu/toggleMenu.js';
+import './assets/js/header/changeLanguage.js';
 
 // > dropdown
 import './assets/js/dropDown.js';

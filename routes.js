@@ -11,6 +11,7 @@ const login = require("./src/controllers/login");
 const logout = require("./src/controllers/logout");
 const loginCheck = require("./src/middlewares/loginCheck");
 const favorites = require("./src/controllers/favorites");
+const language = require("./src/controllers/language");
 
 
 // Rotas home
@@ -44,6 +45,9 @@ route.get("/logout", loginCheck.loginRequired, logout.logout);
 
 // Rotas favorites
 route.get("/favorites", /* loginCheck.loginRequired, */ favorites.index);
+
+// Rotas languages
+route.get("/language", /* loginCheck.loginRequired, */ language.changeLanguage);
 
 
 module.exports = route;

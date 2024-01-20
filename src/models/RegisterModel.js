@@ -8,10 +8,15 @@ const UserModel = mongoose.model('Users', UserSchema);
 const FavoritesModel = mongoose.model('Favorites', FavoriteSchema);
 
 class RegisterModel {
-    constructor(body) {
+    constructor(body, errorLang) {
         this.body = body;
         this.errors = [];
         this.user = null;
+        this.errorLang = errorLang;
+    }
+
+    defErrorLang(ptBrLangMessage, enLang2Message) {
+        return this.errorLang === "ptBr"? ptBrLangMessage : enLang2Message;
     }
 
     async create() {
@@ -28,16 +33,16 @@ class RegisterModel {
 
     async userExists() {
         this.user = await UserModel.findOne({email: this.body.email});
-        if(this.user) this.errors.push("User already exists");
+        if(this.user) this.errors.push(this.defErrorLang("Usuário já existe", "User already exists"));
     }
 
     valid() {
         this.cleanUp();
 
-        if(this.body.name.length < 3 || this.body.name.length > 24) this.errors.push("Name must contain between 3 and 24 characters");
-        if(this.body.surname.length < 3 || this.body.surname.length > 24) this.errors.push("Surname must contain between 3 and 24 characters");
-        if(!validator.isEmail(this.body.email)) this.errors.push("Inválid e-mail");
-        if(this.body.password.length < 8 || this.body.password.length > 24) this.errors.push("Password must contain between 8 and 32 characters");
+        if(this.body.name.length < 3 || this.body.name.length > 24) this.errors.push(this.defErrorLang("Nome deve conter entre 3 e 24 caracteres", "Name must contain between 3 and 24 characters"));
+        if(this.body.surname.length < 3 || this.body.surname.length > 24) this.errors.push(this.defErrorLang("Sobrenome deve conter entre 3 e 24 caracteres", "Surname must contain between 3 and 24 characters"));
+        if(!validator.isEmail(this.body.email)) this.errors.push(this.defErrorLang("E-mail inválido", "Invalid e-mail"));
+        if(this.body.password.length < 8 || this.body.password.length > 24) this.errors.push(this.defErrorLang("Senha deve conter entre 8 e 32 caracteres", "Password must contain between 8 and 32 characters"));
     }
 
     cleanUp() {

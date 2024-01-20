@@ -18,40 +18,50 @@
                         <a class="container-account" href="/register">
                             <span class="material-symbols-outlined font-size-xxl fill-icon">account_circle</span>
                             <div>
-                                <p class="font-size-base">login or sign up</p>
+                                <p class="font-size-base"><%= language.header.menu.menuHeader %></p>
                             </div>
                         </a>
                     <% } %>
                 </header>
                 <section class="my-account">
                     <div class="container-title">
-                        <h1 class="font-size-md">My account</h1>
+                        <h1 class="font-size-md"><%= language.header.menu.myAccount %></h1>
                     </div>
                     <div class="options normal-font">
                         <a class="options-item" href="#">
                             <span class="material-symbols-outlined fill-icon font-size-lg">person</span>
-                            <span class="font-size-base">My data</span>
+                            <span class="font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.myData %></span>
                         </a>
                         <a class="options-item" href="/favorites">
                             <span class="material-symbols-outlined fill-icon font-size-lg">favorite</span>
-                            <span class="font-size-base">Favorites</span>
+                            <span class="font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.favorites %></span>
                         </a>
                         <% if(user) { %>
                             <a class="options-item" href="/logout">
                                 <span class="material-symbols-outlined fill-icon font-size-lg">logout</span>
-                                <span class="font-size-base">Logout</span>
+                                <span class="font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.logout %></span>
                             </a>
                         <% } %>
                     </div>
                 </section>
                 <section class="help-configs space-top-3">
                     <div class="container-title">
-                        <h1 class="font-size-md">Help and configuration</h1>
+                        <h1 class="font-size-md"><%= language.header.menu.helpSettings %></h1>
                     </div>
                     <div class="options normal-font">
+                        <button class="change-language dropdown-trigger-click inside">
+                            <div class="container-text-icon">
+                                <span class="material-symbols-outlined font-size-lg">language</span>
+                                <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.language.value %></span>
+                            </div>
+                            <div class="dropdown-click header inside normal-font">
+                                <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="ptBr" value="🇧🇷 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option1 %>">
+                                <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="en" value="🇺🇸 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option2 %>">
+                            </div>
+                        </button>
                         <button class="project-info-btn">
                             <span class="material-symbols-outlined font-size-lg">info</span>
-                            <span class="font-size-base normal-font">Info</span>
+                            <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.info %></span>
                         </button>
                     </div>
                 </section>
@@ -72,20 +82,30 @@
         <div class="container-right">
             <div class="dropdown-trigger help-settings">
                 <span class="material-symbols-outlined font-size-lg">info</span>
-                <span class="normal-font text-info">Help and settings</span>
+                <span class="normal-font text-info"><%= language.header.dropDownMenuText0.value %></span>
                 <div class="options dropdown header left normal-font">
                     <button class="change-page-theme">
                         <span class="font-size-md material-symbols-outlined">dark_mode</span>
                         <span class="text">
-                            <span class="font-size-sm">Dark mode</span>
+                            <span class="font-size-sm"><%= language.header.dropDownMenuText0.dropDownOptions.darkMode %></span>
                             <span class="font-size-sm">
                                 <strong class="text-status-darkmode">OFF</strong>
                             </span>
                         </span>
                     </button>
+                    <button class="change-language dropdown-trigger-click inside">
+                        <div class="container-text-icon">
+                            <span class="material-symbols-outlined font-size-md">language</span>
+                            <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.language.value %></span>
+                        </div>
+                        <div class="dropdown-click header inside normal-font">
+                            <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="ptBr" value="🇧🇷 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option1 %>">
+                            <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="en" value="🇺🇸 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option2 %>">
+                        </div>
+                    </button>
                     <button class="project-info-btn">
                         <span class="material-symbols-outlined font-size-md">info</span>
-                        <span class="font-size-base normal-font">Info</span>
+                        <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.info %></span>
                     </button>
                 </div>
             </div>
@@ -98,22 +118,22 @@
                 <% } else { %>
                     <a href="/register">
                         <span class="material-symbols-outlined font-size-lg fill-icon">person</span>
-                        <span class="normal-font text-info">Login/Sign up</span>
+                        <span class="normal-font text-info"><%= language.header.dropDownMenuText1.value %></span>
                     </a>
                 <% } %>
                 <% if(user) { %>
                     <div class="options dropdown header right normal-font">
                         <a class="options-item" href="#">
                             <span class="material-symbols-outlined fill-icon font-size-md">person</span>
-                            <span class="font-size-base">My data</span>
+                            <span class="text font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.myData %></span>
                         </a>
                         <a class="options-item" href="/favorites">
                             <span class="material-symbols-outlined fill-icon font-size-md">favorite</span>
-                            <span class="font-size-base">Favorites</span>
+                            <span class="text font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.favorites %></span>
                         </a>
                         <a class="options-item" href="/logout">
                             <span class="material-symbols-outlined fill-icon font-size-md">logout</span>
-                            <span class="font-size-base">Logout</span>
+                            <span class="text font-size-base"><%= language.header.dropDownMenuText1.dropDownOptions.logout %></span>
                         </a>
                     </div>
                 <% } %>

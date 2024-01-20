@@ -7,8 +7,19 @@ exports.index = (req, res) => {
 };
 
 exports.create = async (req, res) => {
+    let language;
+    if(req.session.lang) {
+        if(req.session.lang === "ptBr") {
+            language = "ptBr";
+        } else if(req.session.lang === "en") {
+            language = "en";
+        }
+    } else {
+        language =  "en";
+    }
+
     try {
-        const register = new RegisterModel(req.body);
+        const register = new RegisterModel(req.body, language);
         await register.create();
         if(register.errors.length > 0)  {
             req.flash("errors", register.errors);

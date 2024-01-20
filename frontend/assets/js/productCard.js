@@ -1,5 +1,6 @@
 import {localStorageSave, localStorageGet, localStorageRemove} from "./localStorageSaverAndGet";
 import messages from '../js/messages';
+import checkLanguage from "./checkLanguage";
 
 export default class ProductCard {
     constructor(product) {
@@ -51,7 +52,7 @@ export default class ProductCard {
         btn.addEventListener("click", () => {
             const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
             addCartItemLclStrg();
-            messages("success", "Product successfully added to cart");
+            messages("success", checkLanguage() === "ptBr"? "Produto adicionado com sucesso ao carrinho" : "Product successfully added to cart");
         });
 
         return btn;
