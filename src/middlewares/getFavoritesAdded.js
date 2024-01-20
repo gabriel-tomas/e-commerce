@@ -20,11 +20,13 @@ exports.getFavorites = async (req, res, next) => {
             await favorite.getItems();
         
             res.locals.linksToChange = favorite.favorites;
-            console.log(res.locals.linksToChange);
             next();
         } catch(e) {
             console.log(e);
             next();
         }
+    } else {
+        res.locals.linksToChange = null;
+        next();
     }
 }

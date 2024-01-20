@@ -1,4 +1,6 @@
 // home page
+// > get favorite items and set in localstorage
+import './assets/js/getFavoriteItems.js';
 // > section categories
 import './assets/js/sectionCategories.js';
 // > for you
