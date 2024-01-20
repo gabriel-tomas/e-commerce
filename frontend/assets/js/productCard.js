@@ -14,11 +14,11 @@ export default class ProductCard {
 
     create() {
         const divParent = this.divParent;
-        const addTocartButton = this.addToCartButton;
+        const containerAddToCartOrFavorite = this.containerAddToCartOrFavorite;
         const containerAndThumb = this.containerAndThumb;
         const bottomInfo = this.bottomInfos;
 
-        divParent.appendChild(addTocartButton);
+        divParent.appendChild(containerAddToCartOrFavorite);
         divParent.querySelector(".product-link").appendChild(containerAndThumb);
         divParent.querySelector(".product-link").appendChild(bottomInfo);
 
@@ -39,7 +39,20 @@ export default class ProductCard {
         return div;
     }
 
-    get addToCartButton() {
+    get containerAddToCartOrFavorite() {
+        const parent = document.createElement("div")
+        parent.classList.add("container-cart-favorite");
+
+        const link = document.createElement("a");
+        link.classList.add("btn-add-to-favorite");
+
+        const spanLink = document.createElement("span");
+        spanLink.classList.add("material-symbols-outlined", "font-size-md");
+        spanLink.innerText = "favorite";
+        link.setAttribute("href", `/favorites/${this.id}`);
+
+        link.appendChild(spanLink);
+
         const btn = document.createElement("button");
         btn.classList.add("btn-add-to-cart");
         
@@ -55,7 +68,10 @@ export default class ProductCard {
             messages("success", checkLanguage() === "ptBr"? "Produto adicionado com sucesso ao carrinho" : "Product successfully added to cart");
         });
 
-        return btn;
+        parent.appendChild(link);
+        parent.appendChild(btn);
+
+        return parent;
     }
 
     static addCartItemLclStrg() {
