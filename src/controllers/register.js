@@ -27,7 +27,7 @@ exports.create = async (req, res) => {
                 res.redirect("/register");
             });
         } else {
-            req.flash("success", "User created successfully!");
+            req.flash("success", language === "ptBr"? "Usuário criado com sucesso": "User created successfully!");
             req.session.user = register.user;
             req.session.save(() => {
                 res.redirect("/");

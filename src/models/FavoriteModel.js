@@ -6,10 +6,11 @@ const FavoritesModel = mongoose.model('Favorites', FavoriteSchema);
 class Favorite {
     constructor(userId, item, errorLang) {
         this.userId = userId;
-        this.item = item;
+        this.item = item.trim();
         this.errors = [];
         this.favorite = null;
         this.errorLang = errorLang;
+        this.favorites = []
     }
 
     defErrorLang(ptBrLangMessage, enLang2Message) {
@@ -17,15 +18,15 @@ class Favorite {
     }
 
     async create() {
-        favoriteExists();
-        
-        this.favorite = await FavoritesModel.findOne({ id_reference: userId });
-
-        console.log(this.favorite);
+        this.favorite = await FavoritesModel.findOne({ id_reference: this.userId });
+        this.favorites = [...this.favorite.favorites];
+        this.favoriteExists();
+        if(this.errors.length > 0) return;
+        await FavoritesModel.findOneAndUpdate({ id_reference: this.userId }, { favorites: [...this.favorites, this.item] });
     }
 
     async favoriteExists() {
-        if(this.favorite) this.errors.push(this.defErrorLang("Já adicionado", "Already added"));
+        if(this.favorites.indexOf(this.item) !== -1) this.errors.push(this.defErrorLang("Já adicionado", "Already added"));
     }
 }
 
