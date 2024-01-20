@@ -7,7 +7,7 @@ class Favorite {
     constructor(userId, item, errorLang) {
         this.userId = userId;
         if(item) {
-            this.item = item.trim();
+            this.item = String(item.trim());
         }
         this.errors = [];
         this.favorite = null;
@@ -21,15 +21,28 @@ class Favorite {
 
     async create() {
         this.favorite = await FavoritesModel.findOne({ id_reference: this.userId });
+        if(!this.favorite) return;
         this.favorites = [...this.favorite.favorites];
+        if(!Number(this.item)) return;
         this.favoriteExists();
         if(this.errors.length > 0) return;
-        if(!Number(this.item)) return;
         await FavoritesModel.findOneAndUpdate({ id_reference: this.userId }, { favorites: [...this.favorites, this.item] });
+    }
+
+    async delete() {
+        this.favorite = await FavoritesModel.findOne({ id_reference: this.userId });
+        if(!this.favorite) return;
+        this.favorites = [...this.favorite.favorites];
+        if(!Number(this.item)) return;
+        this.favoriteNotExists();
+        if(this.errors.length > 0) return;
+        this.favorites.splice(this.favorites.indexOf(this.item), 1);
+        await FavoritesModel.findOneAndUpdate({ id_reference: this.userId }, { favorites: [...this.favorites] });
     }
 
     async getItems() {
         this.favorite = await FavoritesModel.findOne({ id_reference: this.userId });
+        if(!this.favorite) return;
         this.favorites = this.favorite.favorites;
         if(!this.favorites) {
             return null;
@@ -43,6 +56,10 @@ class Favorite {
         }
 
         return products;
+    }
+
+    async favoriteNotExists() {
+        if(this.favorites.indexOf(this.item) === -1) this.errors.push(this.defErrorLang("Esse item não existe nos favoritos", "This item does not exist in favorites"))
     }
 
     async favoriteExists() {

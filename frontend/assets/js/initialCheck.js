@@ -27,4 +27,21 @@ import changeThemeBtnStatus from "./header/changeThemeBtnStatus";
         }
     }
     checkMenu();
+
+    const checkAddRemoveFavoritePos = () => {
+        const containersAddRemoveCartFavorite = document.querySelectorAll(".container-add-remove-cart-favorite");
+        const containersProductFavorite = document.querySelectorAll(".container-product-favorite");
+        const containersPriceInfo = document.querySelectorAll(".container-product-favorite > .container-price-info");
+
+        if(window.matchMedia("(max-width: 466px)").matches) {
+            containersAddRemoveCartFavorite.forEach((el, i) => {
+                containersProductFavorite[i].appendChild(el);
+            });
+        } else {
+            containersAddRemoveCartFavorite.forEach((el, i) => {
+                containersPriceInfo[i].appendChild(el);
+            });
+        }
+    }
+    checkAddRemoveFavoritePos();
 })();
