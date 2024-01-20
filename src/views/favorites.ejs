@@ -2,16 +2,43 @@
 <%- include("./includes/end-head/end-head-favorites") %>
 <%- include("./includes/start-body") %>
     <section class="favorites space-sides max-width-section-align space-top">
-        
+        <section class="container-products-favorites">
+            <% if(products) { %>
+                <% products.forEach(product => { %>
+                    <div class="container-product-favorite">
+                        <div class="container-img">
+                            <img src="<%- product.thumbnail %>" alt="<%= product.title %>">
+                        </div>
+                        <div class="container-product-info">
+                            <div class="title">
+                                <h1 class="font-size-base"><%= product.title %></h1>
+                            </div>
+                            <div class="description">
+                                <p class="font-size-base"><%= product.description %></p>
+                            </div>
+                            <div class="brand">
+                                <p class="font-size-sm"><%= product.brand %></p>
+                            </div>
+                        </div>
+                        <div class="container-price-info">
+                            <div class="price">
+                                <p class="last-price font-size-base"><s>$ <%- (((product.discountPercentage / 100) * product.price) + product.price).toFixed(2) %></s></p>
+                                <p class="newer-price font-size-base">$ <%= product.price %> <span class="font-size-sm"><%= product.discountPercentage %>% OFF</span></p>
+                            </div>
+                            <div>
+                                <a class="btn-remove-favorite" href="/favorites/remove/<%= product.id %>">
+                                    <span class="material-symbols-outlined font-size-md fill-icon">favorite</span>
+                                </a>
+                                <button class="btn-add-to-cart favorites">
+                                    <span class="material-symbols-outlined font-size-md">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>
     </section>
-    <!-- <section class="empty-cart space-sides max-width-section-align">
-        <div class="container-empty-cart">
-            <div class="container-img margin-align-center">
-                <img src="./assets/imgs/empty-cart.svg" alt="Empty cart">
-            </div>
-            <h1 class="font-size-md font-wght-400">Empty cart</h1>
-        </div>
-    </section> -->
 <%- include("./includes/footer") %>
 <%- include("./includes/end-footer/end-footer-favorites") %>
     
