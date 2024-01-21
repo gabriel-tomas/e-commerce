@@ -44,12 +44,12 @@ route.post("/login", loginCheck.checkLogin, login.login);
 route.get("/logout", loginCheck.loginRequired, logout.logout);
 
 // Rotas favorites
-route.get("/favorites", /* loginCheck.loginRequired, */ favorites.index);
-route.get("/favorites/:id", /* loginCheck.loginRequired, */ favorites.create);
-route.get("/favorites/remove/:id", /* loginCheck.loginRequired, */ favorites.delete);
+route.get("/favorites", loginCheck.loginRequired, favorites.index);
+route.get("/favorites/:id", loginCheck.loginRequired, favorites.create);
+route.get("/favorites/remove/:id", loginCheck.loginRequired, favorites.delete);
 
 // Rotas languages
-route.get("/language", /* loginCheck.loginRequired, */ language.changeLanguage);
+route.get("/language", language.changeLanguage);
 
 
 module.exports = route;
