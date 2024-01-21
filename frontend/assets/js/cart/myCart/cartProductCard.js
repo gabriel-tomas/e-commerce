@@ -94,12 +94,12 @@ export default class CartProductCard extends ProductCard {
         const updatePriceAndSummary = (method, removeAll=false) => {
             if(method === "add") {
                 const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
-                addCartItemLclStrg();
+                addCartItemLclStrg("cart-items");
                 summary.updateTotal("add", this.price);
                 summary.updateSummary();
             } else if(method === "remove") {
                 const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
-                deleteCartItemLclStrg(removeAll);
+                deleteCartItemLclStrg("cart-items", removeAll);
                 if(removeAll) {
                     checkCart();
                     var price = this.totalPrice;
