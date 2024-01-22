@@ -1,7 +1,10 @@
 import productsMethods from "../productApi";
-import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
+import {localStorageSave, localStorageGet, localStorageRemove} from "../localStorageSaverAndGet";
+import messages from '../messages';
+import checkLanguage from "../checkLanguage";
 
 (() => {
+    const backBlocker = document.querySelector(".back-blocker");
     class ForYouChoicer {
         createContainerChoicer() { 
             const{divContainerChoicer, containerOptions} =  createNoRepeatEl();
@@ -14,6 +17,10 @@ import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
             })
 
             addChoicerToBody(divContainerChoicer);
+
+            function showAfter5Reloads(timesReload = 7) {
+                localStorageSave("interests-reload", timesReload);
+            }
 
             function createTreeElLabels(spanText) {
                 const parentLabel = document.createElement("label");
@@ -31,7 +38,17 @@ import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
             }
 
             function addChoicerToBody(containerChoicer) {
-                document.body.appendChild(containerChoicer);
+                if(!localStorageGet("interests-reload") || localStorageGet("interests-reload") == 0) {
+                    backBlocker.classList.add("active");
+                    document.body.classList.add("body-disabled");
+                    backBlocker.addEventListener("click", destroyContainerChoicer);
+                    document.body.appendChild(containerChoicer);
+                    localStorageRemove("interests-reload");
+                    return;
+                }
+                let reload = localStorageGet("interests-reload");
+                reload -= 1;
+                localStorageSave("interests-reload", reload);
             }
 
             function createNoRepeatEl() {
@@ -80,13 +97,22 @@ import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
                     }
                 });
 
+                if(selectedItems.length < 3) {
+                    messages("error", checkLanguage() === "ptBr"? "Selecione pelo menos 3 items" : "Select at least 3 items");
+                    return;
+                }
+
                 localStorageSave("interestedItems", selectedItems);
                 destroyContainerChoicer();
             }
 
             function destroyContainerChoicer() {
+                showAfter5Reloads();
+                document.body.classList.remove("body-disabled");
                 const divContainerChoicer = document.querySelector(".container-choicer-for-you");
+                backBlocker.classList.remove("active");
                 divContainerChoicer.remove();
+                backBlocker.removeEventListener("click", destroyContainerChoicer);
             }
         }
     }

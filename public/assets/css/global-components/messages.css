@@ -8,7 +8,7 @@
     padding: 20px;
     box-shadow: 0px 0px 10px var(--neutral-8);
     width: clamp(200px, 80vw, 380px);
-    z-index: 10;
+    z-index: 100;
     text-align: center;
 }
 

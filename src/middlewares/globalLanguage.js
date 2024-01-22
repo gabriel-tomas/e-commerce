@@ -205,6 +205,11 @@ exports.globalLanguages = (req, res, next) => {
             zipCode: "Zip code"
         }
         languages.en.cleanCart = "Clean cart";
+    } else if(req.url === "/favorites") {
+        // ptBr
+        languages.ptBr.titleFavorites = "Favoritos";
+        // en
+        languages.en.titleFavorites = "Favorites";
     }
 
     let language;
