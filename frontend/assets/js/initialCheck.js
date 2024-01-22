@@ -1,8 +1,20 @@
-import {localStorageGet} from "./localStorageSaverAndGet";
+import {localStorageSave, localStorageGet} from "./localStorageSaverAndGet";
 import darkMode from "./darkMode";
 import changeThemeBtnStatus from "./header/changeThemeBtnStatus";
 
 (() => {
+    const getUserPreferredLanguage = () => {
+        if(localStorageGet("language")) return;
+        if(navigator.language === "pt-BR" || navigator.language === "pt") {
+            window.location.href = `/language?q=ptBr`;
+            localStorageSave("language", "ptBr");
+        } else {
+            window.location.href = `/language?q=en`;
+            localStorageSave("language", "en");
+        }
+    }
+    getUserPreferredLanguage();
+    
     const checkDarkMode = () => {
         if(localStorageGet("darkMode") === true) {
             darkMode.on;

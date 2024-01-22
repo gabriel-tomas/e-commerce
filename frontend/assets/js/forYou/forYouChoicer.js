@@ -59,7 +59,7 @@ import checkLanguage from "../checkLanguage";
                 divTop.classList.add("container-top");
                 const h1 = document.createElement("h1");
                 h1.classList.add("font-size-lg");
-                h1.innerText = "Choose your interests";
+                h1.innerText = checkLanguage() === "ptBr"? "Escolha seus interesses" : "Choose your interests";
                 const btnClose = document.createElement("button");
                 btnClose.classList.add("btn-close-choicer");
                 btnClose.addEventListener("click", destroyContainerChoicer);
@@ -71,7 +71,7 @@ import checkLanguage from "../checkLanguage";
                 divTop.appendChild(btnClose);
 
                 const btnSaveInterests = document.createElement("button");
-                btnSaveInterests.innerText = "Confirm";
+                btnSaveInterests.innerText = checkLanguage() === "ptBr"? "Confirmar" : "Confirm";
                 btnSaveInterests.classList.add("btn-save-interests", "primary-button", "radius-total", "button");
                 btnSaveInterests.addEventListener("click", getSelectedInterests);
                 const containerBtnSave = document.createElement("div");

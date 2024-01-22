@@ -3,6 +3,9 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
+// > initial check
+import './assets/js/initialCheck.js';
+
 // > header
 import './assets/js/header/searchAnimation.js';
 import './assets/js/header/search.js';
@@ -13,9 +16,6 @@ import './assets/js/header/changeLanguage.js';
 
 // > dropdown
 import './assets/js/dropDown.js';
-
-// > initial check
-import './assets/js/initialCheck.js';
 
 // > messages 
 import './assets/js/messages.js'
