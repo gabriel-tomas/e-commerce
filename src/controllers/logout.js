@@ -1,4 +1,6 @@
 exports.logout = (req, res) => {
-    req.session.destroy();
-    res.redirect("/");
+    const lang = req.session.lang;
+    req.session.destroy(() => {
+        res.redirect(`/language?q=${lang}`);
+    });
 }
