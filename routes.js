@@ -12,6 +12,7 @@ const logout = require("./src/controllers/logout");
 const loginCheck = require("./src/middlewares/loginCheck");
 const favorites = require("./src/controllers/favorites");
 const language = require("./src/controllers/language");
+const myData = require("./src/controllers/myData");
 
 
 // Rotas home
@@ -50,6 +51,9 @@ route.get("/favorites/remove/:id", loginCheck.loginRequired, favorites.delete);
 
 // Rotas languages
 route.get("/language", language.changeLanguage);
+
+// Rotas myData
+route.get("/myData", myData.index);
 
 
 module.exports = route;

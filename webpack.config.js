@@ -11,6 +11,7 @@ module.exports = {
         product: './frontend/product.js',
         registerLogin: './frontend/registerLogin',
         favorites: './frontend/favorites',
+        myData: './frontend/myData',
     },
     output: {
         path: path.resolve(__dirname, 'public', 'assets', 'js'),
