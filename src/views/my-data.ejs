@@ -21,7 +21,10 @@
             </div>
             <div class="container-input fit-all password">
                 <label class="label-placeholder normal-font" for="userPassword">Password</label>
-                <input class="input normal-font block-input" type="text" name="password" id="userPassword" value="<%= userData.userPassword %>" readonly>
+                <input class="input normal-font block-input" type="password" name="password" id="userPassword" value="<%= userData.userPassword %>" readonly>
+                <button class="btn-see-password" type="button">
+                    <span class="material-symbols-outlined">visibility_off</span>
+                </button>
             </div>
             <div class="container-submit">
                 <button class="submit-form edit font-wght-700" type="submit">Edit account information</button>

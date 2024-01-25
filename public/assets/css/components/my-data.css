@@ -35,6 +35,17 @@
     margin-top: 0.5rem;
 }
 
+.container-input.password {
+    position: relative;
+}
+
+.btn-see-password {
+    position: absolute;
+    top: 87%;
+    right: 15px;
+    transform: translateY(-87%);
+}
+
 .container-submit {
     grid-column: 2;
     width: clamp(150px, 100%, 250px);
