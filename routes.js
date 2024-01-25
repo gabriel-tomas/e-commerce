@@ -53,7 +53,7 @@ route.get("/favorites/remove/:id", loginCheck.loginRequired, favorites.delete);
 route.get("/language", language.changeLanguage);
 
 // Rotas myData
-route.get("/myData", myData.index);
+route.get("/myData",  loginCheck.loginRequired, myData.index);
 
 
 module.exports = route;

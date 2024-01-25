@@ -28,7 +28,14 @@ exports.create = async (req, res) => {
             });
         } else {
             req.flash("success", language === "ptBr"? "Usuário criado com sucesso": "User created successfully!");
-            req.session.user = register.user;
+            req.session.user = {
+                _id: register.user._id, 
+                name: register.user.name,
+                surname: register.user.surname,
+                email: register.user.email,
+                password: register.user.password,
+                userPassword: req.body.password.trim()
+            };
             req.session.save(() => {
                 res.redirect("/");
             });

@@ -1,8 +1,32 @@
 <%- include("./includes/head") %>
 <%- include("./includes/end-head/end-head-myData") %>
 <%- include("./includes/start-body") %>
-    <section class="favorites space-sides max-width-section-align space-top">
-        
+    <section class="my-data space-sides max-width-section-align space-top">
+        <div class="container-my-data-title">
+            <h1 class="font-size-lg">My data</h1>
+        </div>
+        <form class="form-edit-account-data font-size-base" action="/myData/edit" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="container-input name">
+                <label class="label-placeholder normal-font" for="userName">Name</label>
+                <input class="input normal-font block-input" type="text" name="name" id="userName" value="<%= userData.name %>" readonly>
+            </div>
+            <div class="container-input surname">
+                <label class="label-placeholder normal-font" for="userSurName">Surname</label>
+                <input class="input normal-font block-input" type="text" name="surname" id="userSurName" value="<%= userData.surname %>" readonly>
+            </div>
+            <div class="container-input fit-all email">
+                <label class="label-placeholder normal-font" for="userEmail">E-mail</label>
+                <input class="input normal-font block-input" type="text" name="email" id="userEmail" value="<%= userData.email %>" readonly>
+            </div>
+            <div class="container-input fit-all password">
+                <label class="label-placeholder normal-font" for="userPassword">Password</label>
+                <input class="input normal-font block-input" type="text" name="password" id="userPassword" value="<%= userData.userPassword %>" readonly>
+            </div>
+            <div class="container-submit">
+                <button class="submit-form edit font-wght-700" type="submit">Edit account information</button>
+            </div>
+        </form>
     </section>
 <%- include("./includes/footer") %>
 <%- include("./includes/end-footer/end-footer-myData") %>
