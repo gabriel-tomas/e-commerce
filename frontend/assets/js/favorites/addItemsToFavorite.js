@@ -1,6 +1,14 @@
+import ModelLoad from "../modelLoad";
+
 (async () => {
-    const items = document.querySelector(".favorites-items-span").getAttribute("items").split(",");
-    console.log("fetching items...");
+    const elFavoritesItemsAttribute = document.querySelector(".favorites-items-span").getAttribute("items");
+    const items = elFavoritesItemsAttribute.split(",");
+
+    if(!elFavoritesItemsAttribute) {
+        ModelLoad.disable(".model-load-product-favorite");
+        return;
+    }
+
     const products = [];
     for(let item of items) {
         const requestItem = await fetch(`https://dummyjson.com/products/${item}`);
@@ -8,7 +16,7 @@
         products.push(product);
     }
 
-    for(product of products) {
+    for(let product of products) {
         document.querySelector(".container-products-favorites").innerHTML += `
         <div class="container-product-favorite">
             <div class="container-img">
@@ -42,4 +50,5 @@
         </div>`
     }
     document.querySelector(".favorites-items-span").remove();
+    ModelLoad.disable(".model-load-product-favorite");
 })();

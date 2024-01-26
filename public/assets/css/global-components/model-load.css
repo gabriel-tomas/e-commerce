@@ -8,8 +8,7 @@
     /* rgb(27 27 27) */
 }
 
-/* product card */
-.product-model-load .container-bottom-infos .container-title, .product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-brand, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-divided, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total {
+.product-model-load .container-bottom-infos .container-title, .product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title, .model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-brand, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-divided, .model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total, .model-load-product-favorite > .container-product-info > .title, .model-load-product-favorite > .container-product-info > .description, .model-load-product-favorite > .container-price-info .last-price, .model-load-product-favorite > .container-price-info .newer-price {
     height: 18px;
     border-radius: 5px;
 }
@@ -18,16 +17,19 @@
     display: flex;
 }
 
-.product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount {
+.product-model-load .container-bottom-infos .container-price-and-others > .span-price, .product-model-load .container-bottom-infos .container-price-and-others > .discount, .model-load-product-favorite > .container-price-info .newer-price {
     width: 22%;
     display: block;
+}
+
+.product-model-load .container-bottom-infos .container-price-and-others > .discount, .model-load-product-favorite > .container-price-info .last-price {
+    width: 11%;
 }
 
 .product-model-load .container-bottom-infos .container-price-and-others > .discount {
     width: 18%;
 }
 
-/* cart card */
 .model-load-item-cart {
     
 }
@@ -36,11 +38,11 @@
     border-bottom: none;
 }
 
-.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .divImg {
+.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .divImg, .model-load-product-favorite > .container-img {
     border-radius: 10px;
 }
 
-.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title {
+.model-load-item-cart > .table-product > tbody > .row-datas .td-product > .div-title, .model-load-product-favorite > .container-product-info > .title {
     width: 72%;
 }
 
@@ -53,7 +55,7 @@
     width: 70%;
 }
 
-.model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total {
+.model-load-item-cart > .table-product > tbody > .row-datas .td-price > .p-total, .model-load-product-favorite > .container-product-info.mg-0-5, .model-load-product-favorite > .container-product-info > .description.mg-0-5, .model-load-product-favorite > .container-price-info .newer-price {
     margin-top: .5rem;
 }
 
