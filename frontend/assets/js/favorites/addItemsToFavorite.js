@@ -1,3 +1,6 @@
+import {localStorageSave, localStorageGet} from "../localStorageSaverAndGet";
+import messages from "../messages";
+import checkLanguage from "../checkLanguage";
 import ModelLoad from "../modelLoad";
 
 (async () => {
@@ -14,6 +17,18 @@ import ModelLoad from "../modelLoad";
         const requestItem = await fetch(`https://dummyjson.com/products/${item}`);
         const product = await requestItem.json();
         products.push(product);
+    }
+
+    const addCartItemLclStrg = (key, id) => {
+        let oldValue;
+        oldValue = localStorageGet(key);
+
+        if(oldValue === null) {
+            localStorageSave(key, String(id));
+            return;
+        };
+
+        localStorageSave(key, `${oldValue}, ${id}`);
     }
 
     for(let product of products) {
@@ -49,6 +64,13 @@ import ModelLoad from "../modelLoad";
             </div>
         </div>`
     }
+
+    document.querySelectorAll(".btn-add-to-cart").forEach((value, i) => {
+        value.addEventListener("click", () => {
+            addCartItemLclStrg("cart-items", items[i]);
+            messages("success", checkLanguage() === "ptBr"? "Produto adicionado com sucesso ao carrinho" : "Product successfully added to cart");
+        });
+    });
     document.querySelector(".favorites-items-span").remove();
     ModelLoad.disable(".model-load-product-favorite");
 })();
