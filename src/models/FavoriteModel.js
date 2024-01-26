@@ -47,15 +47,6 @@ class Favorite {
         if(!this.favorites) {
             return null;
         }
-
-        const products = [];
-        for(let item of this.favorites) {
-            const requestItem = await fetch(`https://dummyjson.com/products/${item}`);
-            const product = await requestItem.json();
-            products.push(product);
-        }
-
-        return products;
     }
 
     async favoriteNotExists() {
