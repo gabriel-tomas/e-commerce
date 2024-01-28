@@ -17,6 +17,7 @@ const flash = require("connect-flash");
 const routes = require("./routes");
 const path = require("path");
 const csrf = require("csurf");
+const job = require("./cron");
 const {middlewareGlobal, checkCsrfError, csrfMiddleware} = require("./src/middlewares/middleware");
 const {globalLanguages} = require("./src/middlewares/globalLanguage");
 const {getFavorites} = require("./src/middlewares/getFavoritesAdded");
@@ -42,6 +43,7 @@ app.use(flash());
 app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
 
+job.start();
 app.use(csrf());
 // Meus próprios middlewares
 app.use(middlewareGlobal);
