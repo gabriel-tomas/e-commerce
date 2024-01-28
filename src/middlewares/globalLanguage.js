@@ -31,6 +31,7 @@ exports.globalLanguages = (req, res, next) => {
                     }
                 }
             },
+            footer: "Criado por",
             errorPage: {
                 title: "Erro",
                 paragraph: "Houve algum erro ao tentar se conectar"
@@ -67,6 +68,7 @@ exports.globalLanguages = (req, res, next) => {
                     }
                 }
             },
+            footer: "Made by",
             errorPage: {
                 title: "Error",
                 paragraph: "There was an error trying to connect"

@@ -1,0 +1,12 @@
+footer.footer {
+    height: 60px;
+    margin-top: 4rem;
+    display: grid;
+    place-items: center;
+    border-top: 1px solid var(--neutral-0);
+}
+
+footer.footer .container-creator a:hover {
+    opacity: .7;
+    text-decoration: underline;
+}
