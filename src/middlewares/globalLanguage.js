@@ -30,6 +30,10 @@ exports.globalLanguages = (req, res, next) => {
                         logout: "Sair"
                     }
                 }
+            },
+            errorPage: {
+                title: "Erro",
+                paragraph: "Houve algum erro ao tentar se conectar"
             }
         },
         en: {
@@ -62,6 +66,10 @@ exports.globalLanguages = (req, res, next) => {
                         logout: "Logout"
                     }
                 }
+            },
+            errorPage: {
+                title: "Error",
+                paragraph: "There was an error trying to connect"
             }
         }
     }
