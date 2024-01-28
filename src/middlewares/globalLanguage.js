@@ -83,7 +83,7 @@ exports.globalLanguages = (req, res, next) => {
         }
         languages.en.sectionToprated = "Top rated";
         languages.en.sectionBestsellers = "Best sellers";
-    } else if (req.url.indexOf("/search") !== -1  || req.url.indexOf("/category") !== -1 || req.url === "/foryou" || req.url === "/products") {
+    } else if (req.url.indexOf("/search") !== -1  || req.url.indexOf("/category") !== -1 || req.url === "/foryou") {
         // pt-br
         languages.ptBr.resultsSearch = "resultados para";
         languages.ptBr.filterOrder = {
@@ -99,6 +99,7 @@ exports.globalLanguages = (req, res, next) => {
             applyBtn: "Aplicar",
         }
         languages.ptBr.loadMore = "Carregar Mais Produtos";
+        languages.ptBr.notFound = "Nenhum item foi encontrado";
         // en
         languages.en.resultsSearch = "results for";
         languages.en.filterOrder = {
@@ -114,6 +115,7 @@ exports.globalLanguages = (req, res, next) => {
             applyBtn: "Apply",
         }
         languages.en.loadMore = "Load More Products";
+        languages.en.notFound = "No items were found";
     } else if(req.url === "/register" || req.url === "/login") {
         // pt-br
         languages.ptBr.registerTitle = "Cadastre-se";
@@ -184,6 +186,7 @@ exports.globalLanguages = (req, res, next) => {
             zipCode: "CEP"
         }
         languages.ptBr.cleanCart = "Limpar carrinho";
+        languages.ptBr.emptyCart = "Carrinho vazio";
         // en
         languages.en.titleCart = "My cart";
         languages.en.summary = {
@@ -205,6 +208,7 @@ exports.globalLanguages = (req, res, next) => {
             zipCode: "Zip code"
         }
         languages.en.cleanCart = "Clean cart";
+        languages.en.emptyCart = "Empty cart";
     } else if(req.url === "/favorites") {
         // ptBr
         languages.ptBr.titleFavorites = "Favoritos";
