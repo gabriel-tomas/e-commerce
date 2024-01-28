@@ -2,7 +2,7 @@ const cron = require("cron");
 const https = require("https");
 
 const url = process.env.ONRENDER_URL;
-const job = new cron.CronJob("*/1 * * * *", function () {
+const job = new cron.CronJob("*/14 * * * *", function () {
     console.log("");
     console.log("Restarting server...");
 
