@@ -19,7 +19,6 @@ exports.index = async (req, res) => {
         const productsToAdd = await favorite.getItems();
     
         res.locals.products = productsToAdd;
-        throw Error();
         res.render("favorites");
     } catch(e) {
         console.log(e);
