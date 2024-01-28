@@ -23,6 +23,7 @@ export default {
         this.root.style.setProperty('--neutral-4', 'rgb(24 24 24)');
         this.root.style.setProperty('--neutral-9', 'rgb(73 73 73 / 84%)');
         this.root.style.setProperty('--neutral-10', 'rgb(8 8 8 / 84%)');
+        this.root.style.setProperty('--neutral-13', 'rgba(255, 255, 255, 0.24)');
     },
 
     get off () {
@@ -47,5 +48,6 @@ export default {
         this.root.style.setProperty('--neutral-4', 'rgb(233, 233, 233)');
         this.root.style.setProperty('--neutral-9', 'rgba(182, 182, 182, 0.836)');
         this.root.style.setProperty('--neutral-10', 'rgba(247, 247, 247, 0.836)');
+        this.root.style.setProperty('--neutral-13', 'rgba(0, 0, 0, 0.25)');
     }
 }

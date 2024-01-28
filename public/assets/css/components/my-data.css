@@ -54,17 +54,51 @@
     margin-top: 1.5rem;
 }
 
-.submit-form {
-    background-color: var(--primary);
-    width: 100%;
+.button-my-data {
     height: 38px;
     color: var(--neutral-10);
     border-radius: 8px;
     padding-inline: .6rem;
+    font-family: var(--normal-font);
+    white-space: nowrap
+}
+
+.edit-form {
+    background-color: var(--primary);
+    width: 100%;
+}
+
+.edit-form.desactive {
+    display: none;
+}
+
+.container-save-changes {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-save-changes.active {
+    display: flex;
+}
+
+.container-save-changes > * {
+    flex-basis: 100%;
+}
+
+.container-save-changes .submit-form {
+    background-color: var(--primary);
+}
+
+.container-save-changes .cancel-form {
+    background-color: var(--neutral-9);
+    color: unset;
 }
 
 .input.block-input {
     cursor: not-allowed;
+    box-shadow: inset 0px 0px 2px var(--neutral-13);
 }
 
 @media screen and (max-width: 436px) {
