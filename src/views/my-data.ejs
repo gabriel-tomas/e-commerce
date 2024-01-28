@@ -3,16 +3,16 @@
 <%- include("./includes/start-body") %>
     <section class="my-data space-sides max-width-section-align space-top">
         <div class="container-my-data-title">
-            <h1 class="font-size-lg">My data</h1>
+            <h1 class="font-size-lg"><%= language.titleMyData %></h1>
         </div>
         <form class="form-edit-account-data font-size-base" action="/myData/edit" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="container-input name">
-                <label class="label-placeholder normal-font" for="userName">Name</label>
+                <label class="label-placeholder normal-font" for="userName"><%= language.formMyData.name %></label>
                 <input class="input normal-font block-input" type="text" name="name" id="userName" value="<%= userData.name %>" readonly>
             </div>
             <div class="container-input surname">
-                <label class="label-placeholder normal-font" for="userSurName">Surname</label>
+                <label class="label-placeholder normal-font" for="userSurName"><%= language.formMyData.surname %></label>
                 <input class="input normal-font block-input" type="text" name="surname" id="userSurName" value="<%= userData.surname %>" readonly>
             </div>
             <div class="container-input fit-all email">
@@ -20,7 +20,7 @@
                 <input class="input normal-font block-input" type="text" name="email" id="userEmail" value="<%= userData.email %>" readonly>
             </div>
             <div class="container-input fit-all password">
-                <label class="label-placeholder normal-font" for="userPassword">Password</label>
+                <label class="label-placeholder normal-font" for="userPassword"><%= language.formMyData.password %></label>
                 <input class="input normal-font block-input" type="password" name="password" id="userPassword" value="<%= userData.userPassword %>" readonly>
                 <button class="btn-see-password" type="button">
                     <span class="material-symbols-outlined">visibility_off</span>
@@ -28,10 +28,10 @@
             </div>
             <div class="container-submit">
                 <div class="container-save-changes">
-                    <button class="button-my-data submit-form font-wght-500" type="submit">Save changes</button>
-                    <button class="button-my-data cancel-form" type="button">Cancel changes</button>
+                    <button class="button-my-data submit-form font-wght-500" type="submit"><%= language.formMyData.btnSubmit %></button>
+                    <button class="button-my-data cancel-form" type="button"><%= language.formMyData.btnCancelEdit %></button>
                 </div>
-                <button class="button-my-data edit-form font-wght-500" type="button">Edit account information</button>
+                <button class="button-my-data edit-form font-wght-500" type="button"><%= language.formMyData.btnEdit %></button>
             </div>
         </form>
     </section>

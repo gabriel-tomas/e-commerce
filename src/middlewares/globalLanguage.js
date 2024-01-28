@@ -210,6 +210,27 @@ exports.globalLanguages = (req, res, next) => {
         languages.ptBr.titleFavorites = "Favoritos";
         // en
         languages.en.titleFavorites = "Favorites";
+    } else if(req.url === "/myData") {
+        // ptBr
+        languages.ptBr.titleMyData = "Meus dados";
+        languages.ptBr.formMyData = {
+            name: "Nome",
+            surname: "Sobrenome",
+            password: "Senha",
+            btnSubmit: "Salvar alterações",
+            btnCancelEdit: "Cancelar alterações",
+            btnEdit: "Editar informações da conta"
+        };
+        // en
+        languages.en.titleMyData = "My data";
+        languages.en.formMyData = {
+            name: "Name",
+            surname: "Surname",
+            password: "Password",
+            btnSubmit: "Save changes",
+            btnCancelEdit: "Cancel changes",
+            btnEdit: "Edit account information"
+        };
     }
 
     let language;
