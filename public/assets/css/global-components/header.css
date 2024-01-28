@@ -190,6 +190,12 @@ header.header .container-right > .help-settings:hover::after, header.header .con
     }
 }
 
+@media screen and (max-width: 966px) {
+    .dropdown.options.right {
+        left: -30px;
+    }
+}
+
 @media screen and (max-width: 744px) {
     header.header {
         display: grid;

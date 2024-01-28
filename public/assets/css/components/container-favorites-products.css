@@ -2,6 +2,10 @@ section.favorites {
     margin-bottom: 4.5rem;
 }
 
+section.favorites.no-bottom {
+    margin-bottom: 0;
+}
+
 .favorites > .container-title {
     margin-bottom: 2.2rem;
 }

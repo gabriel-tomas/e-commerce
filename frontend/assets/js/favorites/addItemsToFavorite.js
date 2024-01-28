@@ -9,6 +9,9 @@ import ModelLoad from "../modelLoad";
 
     if(!elFavoritesItemsAttribute) {
         ModelLoad.disable(".model-load-product-favorite");
+        document.querySelector("section.not-found").style.display = "block";
+        document.querySelector("section.not-found").style.marginTop = "0";
+        document.querySelector("section.favorites").classList.add("no-bottom");
         return;
     }
 

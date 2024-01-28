@@ -5,7 +5,7 @@ import checkCart from "./checkCart.js";
 (() => {
     const cleanCartBtn = document.querySelector(".clean-cart");
 
-    cleanCartBtn.addEventListener("click", cleanCart)
+    cleanCartBtn.addEventListener("click", cleanCart);
 
     function cleanCart() {
         const itemsCart = document.querySelectorAll(".items-cart > .item-cart");
