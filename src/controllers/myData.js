@@ -17,8 +17,14 @@ exports.index = async (req, res) => {
         return;
     }
 
-    res.locals.userData = req.session.user;
-    res.render("my-data");
+    try {
+        const myData = new MyData(req.session.user._id, null, language);
+        await myData.getUser();
+        res.locals.userData = { name: myData.user.name, surname: myData.user.surname, email: myData.user.email, userPassword: req.session.user.userPassword };
+        res.render("my-data");
+    } catch(e) {
+        console.log(e);
+    }
 }
 
 exports.edit = async (req, res) => {

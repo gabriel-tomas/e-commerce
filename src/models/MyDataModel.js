@@ -18,6 +18,10 @@ class MyData {
         return this.errorLang === "ptBr"? ptBrLangMessage : enLang2Message;
     }
 
+    async getUser() {
+        this.user = await UserModel.findOne({ _id: this.id });
+    }
+
     async edit() {
         this.valid();
         if(this.errors.length > 0) return;
