@@ -2,6 +2,10 @@ section.not-found {
     display: none;
 }
 
+section.not-found.error-page {
+    display: block;
+}
+
 .empty-cart, .not-found {
     margin-top: 45px;
     padding-bottom: clamp(4rem, 3.333rem + 3.333vw, 6rem);
@@ -31,4 +35,9 @@ section.not-found {
 .empty-cart .container-empty-cart > h1, .not-found .container-not-found > h1 {
     margin-top: 2rem;
     text-align: center;
+}
+
+.container-not-found > p {
+    text-align: center;
+    margin-top: 1rem;
 }

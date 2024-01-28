@@ -22,6 +22,7 @@ exports.index = async (req, res) => {
         res.render("favorites");
     } catch(e) {
         console.log(e);
+        res.render("error-page");
     }
 }
 
@@ -72,6 +73,7 @@ exports.create = async (req, res) => {
         }
     } catch(e) {
         console.log(e);
+        res.render("error-page");
     }
 }
 
@@ -122,5 +124,6 @@ exports.delete = async (req, res) => {
         }
     } catch(e) {
         console.log(e);
+        res.render("error-page");
     }
 }

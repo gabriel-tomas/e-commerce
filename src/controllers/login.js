@@ -42,5 +42,6 @@ exports.login = async (req, res) => {
         }
     } catch(e) {
         console.log(e);
+        res.render("error-page");
     }
 }
