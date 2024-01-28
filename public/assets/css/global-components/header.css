@@ -52,6 +52,10 @@ header.header > .container-right {
     gap: 2.6rem;
 }
 
+header.header > .container-right {
+    z-index: 1;
+}
+
 header.header .container-right > *, header.header .container-right > .my-account > a {
     display: flex;
     align-items: center;
