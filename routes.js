@@ -54,6 +54,7 @@ route.get("/language", language.changeLanguage);
 
 // Rotas myData
 route.get("/myData",  loginCheck.loginRequired, myData.index);
+route.post("/myData/edit",  loginCheck.loginRequired, myData.edit);
 
 
 module.exports = route;

@@ -6,7 +6,8 @@ const UserSchema = require("./schemas/UserSchema");
 const UserModel = mongoose.model('Users', UserSchema);
 
 class MyData {
-    constructor(body, errorLang) {
+    constructor(id, body, errorLang) {
+        this.id = id;
         this.body = body;
         this.errors = [];
         this.user = null;
@@ -21,16 +22,11 @@ class MyData {
         this.valid();
         if(this.errors.length > 0) return;
 
-        console.log(this.body);
-        /* const salt = bcryptjs.genSaltSync();
-        this.body.password = bcryptjs.hashSync(this.body.password, salt); */
+        const salt = bcryptjs.genSaltSync();
+        this.body.password = bcryptjs.hashSync(this.body.password, salt);
 
+        this.user = await UserModel.findOneAndUpdate({ _id: this.id }, { ...this.body }, {new: true});
     }
-
-    /* async userExists() {
-        this.user = await UserModel.findOne({email: this.body.email});
-        if(this.user) this.errors.push(this.defErrorLang("Usuário já existe", "User already exists"));
-    } */
 
     valid() {
         this.cleanUp();

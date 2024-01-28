@@ -53,10 +53,10 @@ class Register {
         }
 
         this.body = {
-            name: this.body.name,
-            surname: this.body.surname,
-            email: this.body.email,
-            password: this.body.password
+            name: this.body.name.trim(),
+            surname: this.body.surname.trim(),
+            email: this.body.email.trim(),
+            password: this.body.password.trim()
         };
     }
 }
