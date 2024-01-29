@@ -85,8 +85,6 @@ export default class Product {
                 stars.push(spanStar());
             }
 
-            console.log(ratingDec);
-
             if(ratingDec < .5) {
                 stars.push(spanStar(true));
             } else {
