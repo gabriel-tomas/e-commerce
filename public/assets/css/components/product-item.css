@@ -2,8 +2,19 @@
     margin-bottom: 3rem;
 }
 
+.product-item .left-content .main-img > img.desactive {
+    visibility: hidden;
+}
+
 .top-content > a {
     color: rgb(0, 80, 252);
+}
+
+.top-content > a.model-load {
+    display: inline-block;
+    height: 18px;
+    width: 10%;
+    border-radius: 5px;
 }
 
 .bottom-content {
@@ -47,6 +58,44 @@
 .bottom-content > .right-content {
     display: flex;
     flex-direction: column;
+}
+
+.product-item .right-content .container-title.model-load {
+    width: 40%;
+    height: 24px;
+    border-radius: 5px;
+}
+
+.product-item .right-content .container-description.model-load {
+    height: 18px;
+    border-radius: 5px;
+}
+
+.product-item .right-content .container-rating.model-load {
+    width: 45%;
+    height: 24px;
+    border-radius: 5px;
+}
+
+.product-item .right-content .container-price .price > .value.model-load {
+    width: 15%;
+    display: inline-block;
+    height: 26px;
+    border-radius: 5px;
+}
+
+.product-item .right-content .container-price .discount > .value.model-load {
+    width: 10%;
+    display: inline-block;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.product-item .right-content .container-stock > span > .value.model-load {
+    width: 6%;
+    display: inline-block;
+    height: 20px;
+    border-radius: 5px;
 }
 
 .bottom-content > .right-content .container-title > h1, .bottom-content > .right-content .container-description > p {
