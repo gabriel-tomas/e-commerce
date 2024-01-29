@@ -1,5 +1,6 @@
 import productsMethods from "../productApi";
 import Product from "./product";
+import ModelLoad from "../modelLoad";
 
 (() => {
     const productId = new URLSearchParams(window.location.search).get("id");
@@ -13,5 +14,6 @@ import Product from "./product";
     productsMethods.getSingleProduct(productId, res => {
         const product = new Product(res);
         product.create();
+        ModelLoad.productDisable();
     });
 })();
