@@ -246,6 +246,14 @@
     justify-content: center;
 }
 
+@media screen and (min-height: 743px) {
+    footer.footer.cart-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .cart .items-cart {
         max-height: max-content;
