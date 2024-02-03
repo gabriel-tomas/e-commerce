@@ -1,0 +1,91 @@
+.container-project-info {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    background-color: var(--back-color);
+    border-radius: 10px;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    width: clamp(230px, 90%, 650px);
+}
+
+.container-project-info header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--back-color);
+}
+
+.container-project-info .close {
+    cursor: pointer;
+    position: relative;
+    right: -1rem;
+}
+
+.container-project-info .close span {
+    font-size: var(--font-size-lg);
+}
+
+.container-project-info a {
+    text-decoration: underline;
+    transition: .2s opacity;
+}
+
+.container-project-info {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.container-project-info::-webkit-scrollbar {
+    padding-block: 15px;
+    height: 10px;
+    background-color: var(--background);
+    border-radius: 10px;
+    width: 8px;
+}
+
+.container-project-info::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 10px;
+}
+
+.container-project-info::-webkit-scrollbar-track {
+    background: var(--scrollbar-back);
+    border-radius: 10px;
+}
+
+.container-project-info a:hover {
+    opacity: .7;
+}
+
+.container-project-info > .info-content h2 {
+    font-size: var(--font-size-md);
+}
+
+.container-project-info > .info-content  p {
+    font-size: var(--font-size-base);
+}
+
+.container-project-info > .info-content > p , .container-project-info > .info-content > ul, .container-project-info > .info-content h2  {
+    margin-top: .8rem;
+}
+
+.container-project-info > .info-content > ul {
+    padding-left: 1rem;
+}
+
+.container-project-info > .info-content > ul > li + li {
+    margin-top: .5rem;
+}
+
+.container-project-info.active {
+    display: block;
+}

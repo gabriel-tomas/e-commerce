@@ -70,6 +70,14 @@
     color: var(--accent);
 }
 
+@media screen and (min-height: 743px) {
+    footer.footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 799px) {
     .form {
         padding-inline: 2rem;
