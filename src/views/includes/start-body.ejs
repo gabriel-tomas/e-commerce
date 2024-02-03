@@ -59,7 +59,7 @@
                                 <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="en" value="🇺🇸 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option2 %>">
                             </div>
                         </button>
-                        <button class="project-info-btn">
+                        <button class="project-info-btn container-left">
                             <span class="material-symbols-outlined font-size-lg">info</span>
                             <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.info %></span>
                         </button>
@@ -103,7 +103,7 @@
                             <input class="change-language-btn-pt-en font-size-base normal-font" type="button" language="en" value="🇺🇸 <%= language.header.dropDownMenuText0.dropDownOptions.language.options.option2 %>">
                         </div>
                     </button>
-                    <button class="project-info-btn">
+                    <button class="project-info-btn container-right">
                         <span class="material-symbols-outlined font-size-md">info</span>
                         <span class="font-size-base normal-font"><%= language.header.dropDownMenuText0.dropDownOptions.info %></span>
                     </button>
@@ -143,3 +143,25 @@
             </a>
         </div>
     </header>
+    <div class="container-project-info normal-font">
+        <header>
+            <h1><%= language.projectInfo.title %></h1>
+            <button class="close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </header>
+        <div class="info-content">
+            <p><%- language.projectInfo.paragraphs.p1 %></p>
+            <p><%- language.projectInfo.paragraphs.p2 %></p>
+            <h2><%- language.projectInfo.h2 %></h2>
+            <ul>
+                <li>
+                    <p><%- language.projectInfo.ul.li1 %></p>
+                </li>
+                <li>
+                    <p><%- language.projectInfo.ul.li2 %></p>
+                </li>
+            </ul>
+            <p><%- language.projectInfo.resume %></p>
+        </div>
+    </div>

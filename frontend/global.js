@@ -13,6 +13,7 @@ import './assets/js/header/changeTheme.js';
 import './assets/js/header/menu/moveDarkMode.js';
 import './assets/js/header/menu/toggleMenu.js';
 import './assets/js/header/changeLanguage.js';
+import './assets/js/header/toggleInfo.js';
 
 // > dropdown
 import './assets/js/dropDown.js';

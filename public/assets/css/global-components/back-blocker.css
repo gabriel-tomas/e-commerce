@@ -1,4 +1,4 @@
-.back-blocker {
+.info-back-blocker, .back-blocker {
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -8,12 +8,16 @@
     transition: .5s background-color .18s;
 }
 
-.back-blocker.active {
+.info-back-blocker.active, .back-blocker.active {
     visibility: visible;
     height: 100vh;
     width: 100vw;
     z-index: 10;
     background-color: var(--neutral-11);
+}
+
+.info-back-blocker.active {
+    z-index: 11;
 }
 
 .body-disabled {

@@ -31,6 +31,19 @@ exports.globalLanguages = (req, res, next) => {
                     }
                 }
             },
+            projectInfo: {
+                title: "Sobre o projeto",
+                paragraphs: {
+                    p1: "Projeto baseado em um E-commerce onde você pode colocar coisas no carrinho, adicionar coisas aos favoritos, ter uma conta para armazenar suas coisas aos favoritos.",
+                    p2: `Produtos, categorias são todas requisitados da API <strong><a href="https://dummyjson.com/" target="_blank">DummyJSON</a></strong>.`,
+                },
+                h2: "O projeto possui frontend e backend:",
+                ul: {
+                    li1: `O frontend foi feito com <strong>EJS</strong>, puro <strong>JavaScript</strong> e puro <strong>CSS</strong>`,
+                    li2: `O backend foi feito com o <strong>Express</strong> para o gerenciamento das rotas e o banco de dados usado foi <strong>MongoDB</strong> para armazenar os usuários do E-commerce`
+                },
+                resume: "Resumo do que foi usado: EJS, JavaScript, CSS, Express, MongoDB e WebPack com Babel."
+            },
             footer: "Criado por",
             errorPage: {
                 title: "Erro",
@@ -67,6 +80,19 @@ exports.globalLanguages = (req, res, next) => {
                         logout: "Logout"
                     }
                 }
+            },
+            projectInfo: {
+                title: "About the project",
+                paragraphs: {
+                    p1: "Project based on an E-commerce where you can add things to the cart, add things to favorites, have an account to store your favorite things.",
+                    p2: `Products, categories are all requested from the API <strong><a href="https://dummyjson.com/" target="_blank">DummyJSON</a></strong>.`,
+                },
+                h2: "The project has a frontend and backend:",
+                ul: {
+                    li1: `The frontend was made with <strong>EJS</strong>, pure <strong>JavaScript</strong> and pure <strong>CSS</strong>`,
+                    li2: `The backend was made with <strong>Express</strong> for route management and the database used was <strong>MongoDB</strong> to store E-commerce users`
+                },
+                resume: "Summary of what was used: EJS, JavaScript, CSS, Express, MongoDB and WebPack with Babel."
             },
             footer: "Made by",
             errorPage: {
