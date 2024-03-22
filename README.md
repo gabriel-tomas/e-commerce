@@ -16,7 +16,7 @@ Produtos, categorias são todas requisitados da API **[DummyJSON](https://dummyj
 EJS, JavaScript, CSS, Express, MongoDB e WebPack com Babel.
 
 ## Como rodar o projeto localmente
-- Primeiro de tudo você precisa setar o .env na pasta raiz do projeto com as seguintes variáveis:
+- Primeiro de tudo você precisa criar um .env na pasta raiz do projeto com as seguintes variáveis:
 ```shell
 DEFAULT_PORT="porta_do_projeto"
 CONNECTION_STRING="connection_string_mongo_db"
