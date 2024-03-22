@@ -16,7 +16,13 @@ Produtos, categorias são todas requisitados da API **[DummyJSON](https://dummyj
 EJS, JavaScript, CSS, Express, MongoDB e WebPack com Babel.
 
 ## Como rodar o projeto localmente
-- Primeiro de tudo você precisa criar um .env na pasta raiz do projeto com as seguintes variáveis:
+- Clone o repositório:
+```shell
+git clone https://github.com/gabriel-tomas/e-commerce.git
+```
+Vá para a pasta onde o projeto foi clonado
+
+- Crie um .env na pasta raiz do projeto com as seguintes variáveis:
 ```shell
 DEFAULT_PORT="porta_do_projeto"
 CONNECTION_STRING="connection_string_mongo_db"
@@ -24,11 +30,6 @@ SECRET="secret_da_session"
 ```
 A connection string pode ser obtida seguindo esse guia: https://www.mongodb.com/basics/mongodb-connection-string
 
-- Clone o repositório:
-```shell
-git clone https://github.com/gabriel-tomas/e-commerce.git
-```
-Vá para a pasta onde o projeto foi clonado
 - Instale os pacotes:
 ```shell
 npm i
