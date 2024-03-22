@@ -14,3 +14,27 @@ Produtos, categorias são todas requisitados da API **[DummyJSON](https://dummyj
 
 ## Resumo do que foi usado
 EJS, JavaScript, CSS, Express, MongoDB e WebPack com Babel.
+
+## Como rodar o projeto localmente
+- Primeiro de tudo você precisa setar o .env na pasta raiz do projeto com as seguintes variáveis:
+```shell
+DEFAULT_PORT="porta_do_projeto"
+CONNECTION_STRING="connection_string_mongo_db"
+SECRET="secret_da_session"
+```
+A connection string pode ser obtida seguindo esse guia: https://www.mongodb.com/basics/mongodb-connection-string
+
+- Clone o repositório:
+```shell
+git clone https://github.com/gabriel-tomas/e-commerce.git
+```
+Vá para a pasta onde o projeto foi clonado
+- Instale os pacotes:
+```shell
+npm i
+```
+- Execute o server:
+```shell
+npm start
+```
+Adendo: Caso você queira editar os arquivos JS da pasta __frontend__ (pasta essa que se encontra na raiz do projeto) você precisa rodar o comando ``npm run loadwp`` para ele fazer o bundle dos arquivos JS para serem usados no frontend.
